@@ -1,3 +1,0 @@
-add_subdirectory(prompter)
-add_subdirectory(threads)
-add_subdirectory(windowwatcher)
