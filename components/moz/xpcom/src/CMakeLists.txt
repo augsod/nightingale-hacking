@@ -1,24 +1,17 @@
+include(SbLibrary)
+
 project(sbXPCOM)
 
-include_directories(
-  ${CMAKE_BINARY_DIR}/components/moz/xpcom/public
-  ${CMAKE_SOURCE_DIR}/components/moz/threads/src
-  ${CMAKE_SOURCE_DIR}/components/include
-  ${XUL_INCLUDE_DIRS})
+sb_library_dependencies(
+  sbMozThreads)
 
-add_definitions(${XUL_CFLAGS})
+sb_library_idl_dependencies(
+  sbIXPCOM)
 
-add_library(${PROJECT_NAME} SHARED
+sb_library(SHARED
   sbCOMArray.cpp
   sbArray.cpp
   sbPropertyBag.cpp
   sbServiceManager.cpp
   sbWeakReference.cpp
   sbXPCOMModule.cpp)
-
-add_dependencies(${PROJECT_NAME}
-  sbIXPCOM)
-
-target_link_libraries(${PROJECT_NAME}
-  sbMozThreads
-  ${XUL_LIBRARIES})

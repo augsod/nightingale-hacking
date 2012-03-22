@@ -1,24 +1,18 @@
+include(SbLibrary)
+
 project(sbWindowWatcher)
 
 include_directories(
-  ${CMAKE_BINARY_DIR}/components/moz/windowwatcher/public
-  ${CMAKE_BINARY_DIR}/components/moz/prompter/public
-  ${CMAKE_SOURCE_DIR}/components/include
-  ${CMAKE_SOURCE_DIR}/components/moz/threads/src
-  ${CMAKE_SOURCE_DIR}/components/moz/xpcom/src
-  ${XUL_INCLUDE_DIRS})
+  ${sbXPCOM_SOURCE_DIR})
 
-add_definitions(${XUL_CFLAGS})
-
-add_library(${PROJECT_NAME} SHARED
-  sbWindowWatcher.cpp
-  sbWindowWatcherModule.cpp
-  ../../xpcom/src/sbWeakReference.cpp)
-
-add_dependencies(${PROJECT_NAME}
+sb_library_idl_dependencies(
   sbIPrompter
   sbIWindowWatcher)
 
-target_link_libraries(${PROJECT_NAME}
-  sbMozThreads
-  ${XUL_LIBRARIES})
+sb_library_dependencies(
+  sbMozThreads)
+
+sb_library(SHARED
+  sbWindowWatcher.cpp
+  sbWindowWatcherModule.cpp
+  ../../xpcom/src/sbWeakReference.cpp)
