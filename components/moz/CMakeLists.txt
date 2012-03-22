@@ -1,5 +1,7 @@
 add_subdirectory(prompter)
+add_subdirectory(threadpoolservice)
 add_subdirectory(threads)
+add_subdirectory(urlformatter)
 add_subdirectory(variant)
 add_subdirectory(windowwatcher)
 add_subdirectory(xpcom)
