@@ -21,3 +21,5 @@ compiled
 .nightingaleconfig.mk
 .nightingaleconfig.out
 compiled-release*
+*~
+*#
