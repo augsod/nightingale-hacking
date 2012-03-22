@@ -227,7 +227,7 @@ sbNewFileURI(nsIFile* aFile,
 
   // Note that NewFileURI is broken on Linux when dealing with
   // file names not in the filesystem charset; see bug 6227
-#if XP_UNIX && !XP_MACOSX
+#if defined(XP_UNIX) && !defined(XP_MACOSX)
   nsCOMPtr<nsILocalFile> localFile = do_QueryInterface(aFile, &rv);
   if (NS_SUCCEEDED(rv)) {
     // Use the local file persistent descriptor to form a URI spec.
