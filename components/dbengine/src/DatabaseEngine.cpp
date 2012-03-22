@@ -560,7 +560,7 @@ static int library_collate_func_utf8(void *pCtx,
   CFRelease(cA);
   CFRelease(cB);
   
-#elif XP_UNIX
+#elif defined(XP_UNIX)
 
   a = (NATIVE_CHAR_TYPE *)g_utf8_to_ucs4((const gchar *)zA, 
                                           nA, 
@@ -573,7 +573,7 @@ static int library_collate_func_utf8(void *pCtx,
                                           NULL, 
                                           NULL);
   
-#elif XP_WIN
+#elif defined(XP_WIN)
 
   a = cBuffers->encodingConversionBuffer1.buffer();
   b = cBuffers->encodingConversionBuffer2.buffer();
