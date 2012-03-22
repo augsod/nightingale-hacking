@@ -1,4 +1,5 @@
 add_subdirectory(albumart)
+add_subdirectory(bundle)
 add_subdirectory(job)
 add_subdirectory(library)
 add_subdirectory(mediacore)
