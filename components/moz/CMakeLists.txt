@@ -1,4 +1,6 @@
 add_subdirectory(fileutils)
+add_subdirectory(image)
+add_subdirectory(process)
 add_subdirectory(prompter)
 add_subdirectory(streams)
 add_subdirectory(strings)
