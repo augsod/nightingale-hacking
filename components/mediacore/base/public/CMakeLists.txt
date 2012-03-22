@@ -1,0 +1,35 @@
+include(XPIDL)
+
+xpidl(sbIMediacoreBase
+  sbIMediacore
+  sbIMediacoreAudioProcessor
+  sbIMediacoreAudioProcessorListener
+  sbIMediacoreBalanceControl
+  sbIMediacoreCapabilities
+  sbIMediacoreError
+  sbIMediacoreEvent
+  sbIMediacoreEventListener
+  sbIMediacoreEventTarget
+  sbIMediacoreFactory
+  sbIMediacoreFactoryRegistrar
+  sbIMediacoreFactoryWrapper
+  sbIMediacoreManager
+  sbIMediacoreMultibandEqualizer
+  sbIMediacorePlaybackControl
+  sbIMediacoreSequencer
+  sbIMediacoreSequenceGenerator
+  sbIMediacoreSimpleEqualizer
+  sbIMediacoreStatus
+  sbIMediacoreTranscodeControl
+  sbIMediacoreTypeSniffer
+  sbIMediacoreVideoWindow
+  sbIMediacoreVolumeControl
+  sbIMediacoreVoting
+  sbIMediacoreVotingChain
+  sbIMediacoreVotingParticipant
+  sbIMediacoreWrapper
+  sbIVideoBox
+  sbIMediaContainer
+  sbIMediaInspector
+  sbIMediaFormatMutable
+  sbIOSDControlService)

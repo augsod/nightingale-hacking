@@ -24,6 +24,7 @@ sb_library(SHARED
   sbMetadataAlbumArtFetcher.cpp)
 
 add_dependencies(${PROJECT_NAME}
+  sbIAlbumArt
   sbIJob
   sbILibraryBase
   sbIMetadataModule
