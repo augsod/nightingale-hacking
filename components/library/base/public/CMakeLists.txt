@@ -1,0 +1,35 @@
+include(XPIDL)
+
+xpidl(sbILibraryBase
+  sbICascadeFilterSet
+  sbIDynamicMediaList
+  sbIDynamicPlaylistService
+  sbIFilterableMediaListView
+  sbILibrary
+  sbILibraryChangeset
+  sbILibraryConstraints
+  sbILibraryDiffingService
+  sbILibraryFactory
+  sbILibraryLoader
+  sbILibraryLoggingService
+  sbILibraryManager
+  sbILibraryManagerListener
+  sbILibraryResource
+  sbILibraryTransferContext
+  sbILibraryUtils
+  sbIMediaItem
+  sbIMediaItemController
+  sbIMediaItemListener
+  sbIMediaItemWatcher
+  sbIMediaList
+  sbIMediaListDuplicateFilter
+  sbIMediaListEnumeratorWrapper
+  sbIMediaListFactory
+  sbIMediaListListener
+  sbIMediaListView
+  sbIMediaListViewMap
+  sbIMediaListViewSelection
+  sbIMediaListViewTreeView
+  sbIOrderableMediaList
+  sbISearchableMediaListView
+  sbISortableMediaListView)

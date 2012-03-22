@@ -1,1 +1,6 @@
+add_subdirectory(albumart)
+add_subdirectory(job)
+add_subdirectory(library)
+add_subdirectory(mediacore)
 add_subdirectory(moz)
+add_subdirectory(property)
