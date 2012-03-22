@@ -521,7 +521,7 @@ nsresult sbLibraryUtils::GetContentURI(nsIURI*  aURI,
 
   // Applies only to Windows and Mac
   PRBool compatible = PR_TRUE;
-#if XP_UNIX && !XP_MACOSX
+#if defined(XP_UNIX) && !defined(XP_MACOSX)
   compatible = PR_FALSE;
 #endif
 
@@ -546,7 +546,7 @@ nsresult sbLibraryUtils::GetContentURI(nsIURI*  aURI,
     NS_ENSURE_SUCCESS(rv, rv);
 
     ToLowerCase(spec);
-  #elif XP_MACOSX
+  #elif defined(XP_MACOSX)
     /**
      * For Mac OS X, normalize the UTF-8 spec to be canonically decomposed
      * (NFD). Supplementary notes:
