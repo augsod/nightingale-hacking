@@ -1,4 +1,8 @@
+add_subdirectory(fileutils)
 add_subdirectory(prompter)
+add_subdirectory(streams)
+add_subdirectory(strings)
+add_subdirectory(temporaryfileservice)
 add_subdirectory(threadpoolservice)
 add_subdirectory(threads)
 add_subdirectory(urlformatter)
