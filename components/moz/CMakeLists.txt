@@ -1,3 +1,7 @@
+add_subdirectory(clipboard)
+add_subdirectory(dirprovider)
+add_subdirectory(errorconsole)
+add_subdirectory(filedownloader)
 add_subdirectory(fileutils)
 add_subdirectory(image)
 add_subdirectory(process)
