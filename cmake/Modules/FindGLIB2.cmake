@@ -38,8 +38,13 @@ find_path(GLIB2_INTERNAL_INCLUDE_DIR glibconfig.h
           PATH_SUFFIXES glib-2.0/include
           HINTS ${PC_LibGLIB2_INCLUDEDIR} "${glib2LibDir}" ${CMAKE_SYSTEM_LIBRARY_PATH})
 
-set(GLIB2_INCLUDE_DIR "${GLIB2_MAIN_INCLUDE_DIR}"
- "${GLIB2_INTERNAL_INCLUDE_DIR}")
+set(GLIB2_INCLUDE_DIR "${GLIB2_MAIN_INCLUDE_DIR}")
+
+# not sure if this include dir is optional or required
+# for now it is optional
+if(GLIB2_INTERNAL_INCLUDE_DIR)
+  set(GLIB2_INCLUDE_DIR ${GLIB2_INCLUDE_DIR} "${GLIB2_INTERNAL_INCLUDE_DIR}")
+endif(GLIB2_INTERNAL_INCLUDE_DIR)
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(GLIB2  DEFAULT_MSG  GLIB2_LIBRARIES GLIB2_MAIN_INCLUDE_DIR)
