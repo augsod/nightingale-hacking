@@ -1,2 +1,3 @@
 add_subdirectory(directory)
+add_subdirectory(filescan)
 add_subdirectory(playlist)
