@@ -55,3 +55,10 @@ add_dependencies(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
   sbMozStringUtils)
+
+add_custom_command(
+  TARGET ${PROJECT_NAME}
+  POST_BUILD
+  COMMAND perl
+  ${CMAKE_CURRENT_SOURCE_DIR}/sbStandardProperties.pl
+  ${CMAKE_CURRENT_SOURCE_DIR})
