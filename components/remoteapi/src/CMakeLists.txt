@@ -1,0 +1,77 @@
+include(SbLibrary)
+
+project(sbBrowserAPI)
+
+include_directories(
+  ${CMAKE_BINARY_DIR}/components/remoteapi/public
+  ${CMAKE_BINARY_DIR}/components/mediacore/base/public
+  ${CMAKE_BINARY_DIR}/components/mediacore/metadata/manager/public
+  ${CMAKE_BINARY_DIR}/components/metrics/public
+  ${CMAKE_BINARY_DIR}/components/playlistcommands/public
+  ${CMAKE_BINARY_DIR}/components/mediaimport/playlist/public
+  ${CMAKE_BINARY_DIR}/components/library/base/public
+  ${CMAKE_BINARY_DIR}/components/library/localdatabase/public
+  ${CMAKE_BINARY_DIR}/components/property/public
+  ${CMAKE_BINARY_DIR}/components/job/public
+  ${CMAKE_BINARY_DIR}/components/dataremote/public
+  ${CMAKE_BINARY_DIR}/components/devicesobsolete/manager/public
+  ${CMAKE_BINARY_DIR}/components/devicesobsolete/base/public
+  ${CMAKE_BINARY_DIR}/components/devicesobsolete/download/public
+  ${CMAKE_BINARY_DIR}/bindings/public
+  ${CMAKE_SOURCE_DIR}/components/moz/strings/src
+  ${CMAKE_SOURCE_DIR}/components/library/localdatabase/src
+  ${CMAKE_SOURCE_DIR}/components/property/src
+  ${CMAKE_SOURCE_DIR}/components/remoteapi/public)
+
+sb_library(SHARED
+  sbRemoteAPIModule.cpp
+  sbRemoteAPIService.cpp
+  sbRemoteCommands.cpp
+  sbRemoteIndexedMediaItem.cpp
+  sbRemoteLibrary.cpp
+  sbRemoteLibraryBase.cpp
+  sbRemoteLibraryResource.cpp
+  sbRemotePlayer.cpp
+  sbRemotePlaylistClickEvent.cpp
+  sbRemoteMediaItem.cpp
+  sbRemoteMediaItemStatusEvent.cpp
+  sbRemoteMediaList.cpp
+  sbRemoteMediaListBase.cpp
+  sbRemoteNotificationManager.cpp
+  sbRemoteWebPlaylist.cpp
+  sbRemoteWrappingSimpleEnumerator.cpp
+  sbRemoteWrappingStringEnumerator.cpp
+  sbRemoteSecurityEvent.cpp
+  sbRemoteSiteLibrary.cpp
+  sbRemoteSiteLibraryResource.cpp
+  sbRemoteSiteMediaItem.cpp
+  sbRemoteSiteMediaList.cpp
+  sbRemoteWebLibrary.cpp
+  sbRemoteWebMediaItem.cpp
+  sbRemoteWebMediaList.cpp
+  sbSecurityMixin.cpp
+  sbURIChecker.cpp
+  sbRemotePlayerFactory.cpp
+  sbScriptableFilter.cpp
+  sbScriptableFilterResult.cpp
+  sbScriptableFilterItems.cpp
+  sbScriptableFunction.cpp)
+
+add_dependencies(${PROJECT_NAME}
+  sbIBrowserAPI
+  sbIMediacoreBase
+  sbIMetadataModule
+  sbIMetrics
+  sbIPlaylistReader
+  sbILibraryBase
+  sbILocalDatabaseLibrary
+  sbIProperties
+  sbIJob
+  sbIDataRemote
+  sbIDeviceManager
+  sbIDeviceBase
+  sbIDownloadDevice
+  sbIWidgets)
+
+target_link_libraries(${PROJECT_NAME}
+  sbMozStringUtils)
