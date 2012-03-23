@@ -61,4 +61,5 @@ add_custom_command(
   POST_BUILD
   COMMAND perl
   ${CMAKE_CURRENT_SOURCE_DIR}/sbStandardProperties.pl
-  ${CMAKE_CURRENT_SOURCE_DIR})
+  ${CMAKE_CURRENT_SOURCE_DIR}
+  WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/dist/jsmodules/)
