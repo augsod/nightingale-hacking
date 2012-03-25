@@ -1226,7 +1226,7 @@ sbLocalDatabaseMediaListView::NotifyListenersInternal(ListenerFunc aListenerFunc
   PRInt32 count = listeners.Count();
   for (PRInt32 index = 0; index < count; index++) {
     sbIMediaListViewListener* listener = listeners.ObjectAt(index);
-    (listener->*aListenerFunc)(thisPtr);
+    ((*listener).*aListenerFunc)(thisPtr);
   }
 }
 

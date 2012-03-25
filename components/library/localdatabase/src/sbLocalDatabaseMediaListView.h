@@ -116,8 +116,9 @@ private:
   // This makes a typedef called ListenerFunc to any member function of
   // sbIMediaListViewListener that has this signature:
   //   nsresult sbIMediaListViewListener::func(sbIMediaListView*)
-  typedef NS_STDCALL_FUNCPROTO(nsresult, ListenerFunc, sbIMediaListViewListener,
-                               OnSortChanged, (sbIMediaListView*));
+  // Once we start using newer mozilla libraries, this can go back to being a
+  // NS_STDCALL_FUNCPROTO
+  typedef nsresult(NS_STDCALL sbIMediaListViewListener::*ListenerFunc)(sbIMediaListView*);
 
   static PLDHashOperator PR_CALLBACK
     AddValuesToArrayCallback(nsStringHashKey::KeyType aKey,

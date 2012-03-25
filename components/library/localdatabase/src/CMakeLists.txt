@@ -1,0 +1,90 @@
+include(SbLibrary)
+
+project(sbLocalDatabaseLibrary)
+
+find_package(Sqlite3)
+
+include_directories(
+  ${CMAKE_BINARY_DIR}/components/dbengine/public
+  ${CMAKE_BINARY_DIR}/components/devices/base/public
+  ${CMAKE_BINARY_DIR}/components/devicesobsolete/base/public
+  ${CMAKE_BINARY_DIR}/components/job/public
+  ${CMAKE_BINARY_DIR}/components/library/base/public
+  ${CMAKE_BINARY_DIR}/components/library/identity/public
+  ${CMAKE_BINARY_DIR}/components/library/localdatabase/public
+  ${CMAKE_BINARY_DIR}/components/mediacore/base/public
+  ${CMAKE_BINARY_DIR}/components/mediamanager/public
+  ${CMAKE_BINARY_DIR}/components/metrics/public
+  ${CMAKE_BINARY_DIR}/components/moz/strings/components/public
+  ${CMAKE_BINARY_DIR}/components/playqueue/public
+  ${CMAKE_BINARY_DIR}/components/property/public
+  ${CMAKE_BINARY_DIR}/components/sqlbuilder/public
+  ${CMAKE_SOURCE_DIR}/components/dbengine/src
+  ${CMAKE_SOURCE_DIR}/components/library/base/src
+  ${CMAKE_SOURCE_DIR}/components/library/base/src/static
+  ${CMAKE_SOURCE_DIR}/components/library/localdatabase/src
+  ${CMAKE_SOURCE_DIR}/components/moz/strings/src
+  ${CMAKE_SOURCE_DIR}/components/moz/threadpoolservice/src
+  ${CMAKE_SOURCE_DIR}/components/moz/threads/src
+  ${CMAKE_SOURCE_DIR}/components/playqueue/src
+  ${CMAKE_SOURCE_DIR}/components/moz/xpcom/src
+  ${CMAKE_SOURCE_DIR}/components/property/src
+  ${CMAKE_SOURCE_DIR}/components/sqlbuilder/src
+  ${SQLITE3_INCLUDE_DIR})
+
+sb_library(SHARED
+  sbLocalDatabaseModule.cpp
+  sbLocalDatabaseGUIDArray.cpp
+  sbLocalDatabaseGUIDArrayLengthCache.cpp
+  sbLocalDatabaseAsyncGUIDArray.cpp
+  sbLocalDatabaseDynamicMediaList.cpp
+  sbLocalDatabaseDynamicMediaListFactory.cpp
+  sbLocalDatabaseLibraryLoader.cpp
+  sbLocalDatabasePropertyCache.cpp
+  sbLocalDatabaseTreeView.cpp
+  sbLocalDatabaseQuery.cpp
+  sbLocalDatabaseMediaItem.cpp
+  sbLocalDatabaseMediaListListener.cpp
+  sbLocalDatabaseLibrary.cpp
+  sbLocalDatabaseLibraryFactory.cpp
+  sbLocalDatabaseMediaListBase.cpp
+  sbLocalDatabaseResourcePropertyBag.cpp
+  sbLocalDatabaseSimpleMediaList.cpp
+  sbLocalDatabaseSimpleMediaListFactory.cpp
+  sbLocalDatabaseSmartMediaList.cpp
+  sbLocalDatabaseSmartMediaListFactory.cpp
+  sbLocalDatabaseSQL.cpp
+  sbLocalDatabaseCascadeFilterSet.cpp
+  sbLocalDatabaseMediaListView.cpp
+  sbLocalDatabaseMediaListViewSelection.cpp
+  sbLocalDatabaseMediaListViewState.cpp
+  sbLocalMediaListBaseEnumerationListener.cpp
+  sbDatabaseResultStringEnumerator.cpp
+  sbPlaylistTreeSelection.cpp
+  sbFilterTreeSelection.cpp
+  sbSelectionListUtils.cpp
+  sbLocalDatabaseDiffingService.cpp
+  ../../base/src/sbLibraryChangeset.cpp
+  ../../../moz/xpcom/src/sbWeakReference.cpp)
+
+add_dependencies(${PROJECT_NAME}
+  sbIDBEngine
+  sbIDeviceBase2
+  sbIDeviceBase
+  sbIJob
+  sbILibraryBase
+  sbIIdentityServiceComponent
+  sbILocalDatabaseLibrary
+  sbIMediacoreBase
+  sbIMediaManager
+  sbIMetrics
+  sbIStrings
+  sbIPlayQueueService
+  sbIProperties
+  sbISQLBuilder)
+
+target_link_libraries(${PROJECT_NAME}
+  sbLibraryUtils
+  sbMozStreams
+  sbMozStringUtils
+  sbMozThreads)

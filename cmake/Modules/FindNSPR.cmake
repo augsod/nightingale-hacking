@@ -18,11 +18,17 @@
 # See the License for more information.
 #=============================================================================
 
-find_path(NSPR_INCLUDE_DIR nspr.h PATHS ${XUL_DIR} PATH_SUFFIXES "/include/nspr")
+set(XUL_DIR ${CMAKE_SOURCE_DIR}/dependencies)
+if(UNIX)
+  set(XUL_DIR ${XUL_DIR}/linux-i686)
+endif()
+set(XUL_DIR ${XUL_DIR}/mozilla-1.9.2/release)
 
-find_library(NSPR_PLDS4_LIBRARY plds4 PATHS ${XUL_DIR} PATH_SUFFIXES "/lib")
-find_library(NSPR_PLC4_LIBRARY plc4 PATHS ${XUL_DIR} PATH_SUFFIXES "/lib")
-find_library(NSPR_NSPR4_LIBRARY nspr4 PATHS ${XUL_DIR} PATH_SUFFIXES "/lib")
+find_path(NSPR_INCLUDE_DIR nspr.h PATHS ${XUL_DIR} PATH_SUFFIXES "include")
+
+find_library(NSPR_PLDS4_LIBRARY plds4 PATHS ${XUL_DIR} PATH_SUFFIXES "lib")
+find_library(NSPR_PLC4_LIBRARY plc4 PATHS ${XUL_DIR} PATH_SUFFIXES "lib")
+find_library(NSPR_NSPR4_LIBRARY nspr4 PATHS ${XUL_DIR} PATH_SUFFIXES "lib")
 
 set(NSPR_LIBRARIES ${NSPR_PLDS4_LIBRARY} ${NSPR_PLC4_LIBRARY} ${NSPR_NSPR4_LIBRARY})
 set(NSPR_INCLUDE_DIRS ${NSPR_INCLUDE_DIR})
