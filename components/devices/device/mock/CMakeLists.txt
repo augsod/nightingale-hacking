@@ -1,3 +1,2 @@
-add_subdirectory(mock)
 add_subdirectory(public)
 add_subdirectory(src)
