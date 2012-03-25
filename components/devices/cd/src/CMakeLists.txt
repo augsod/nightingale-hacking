@@ -1,0 +1,84 @@
+include(SbLibrary)
+
+project(sbCDDevice)
+
+include_directories(
+  ${CMAKE_BINARY_DIR}/components/devices/cd/public
+  ${CMAKE_BINARY_DIR}/components/devices/device/public
+  ${CMAKE_BINARY_DIR}/components/devices/marshall/public
+  ${CMAKE_BINARY_DIR}/components/devices/controller/public
+  ${CMAKE_BINARY_DIR}/components/devices/base/public
+  ${CMAKE_BINARY_DIR}/components/albumart/public
+  ${CMAKE_BINARY_DIR}/components/job/public
+  ${CMAKE_BINARY_DIR}/components/property/public
+  ${CMAKE_BINARY_DIR}/components/library/base/public
+  ${CMAKE_BINARY_DIR}/components/library/localdatabase/public
+  ${CMAKE_BINARY_DIR}/components/mediacore/base/public
+  ${CMAKE_BINARY_DIR}/components/mediacore/transcode/public
+  ${CMAKE_BINARY_DIR}/components/mediacore/metadata/lookup/manager/public
+  ${CMAKE_BINARY_DIR}/components/mediamanager/public
+  ${CMAKE_BINARY_DIR}/components/moz/prompter/public
+  ${CMAKE_BINARY_DIR}/components/moz/strings/components/public
+  ${CMAKE_BINARY_DIR}/components/moz/temporaryfileservice/public
+  ${CMAKE_SOURCE_DIR}/components/library/base/src/static
+  ${CMAKE_SOURCE_DIR}/components/library/base/src
+  ${CMAKE_SOURCE_DIR}/components/property/src
+  ${CMAKE_SOURCE_DIR}/components/devices/base/src
+  ${CMAKE_SOURCE_DIR}/components/devices/controller/src
+  ${CMAKE_SOURCE_DIR}/components/devices/marshall/src
+  ${CMAKE_SOURCE_DIR}/components/devices/device/src
+  ${CMAKE_SOURCE_DIR}/components/watchfolder/utils
+  ${CMAKE_SOURCE_DIR}/components/library/localdatabase/src
+  ${CMAKE_SOURCE_DIR}/components/moz/errorconsole/src
+  ${CMAKE_SOURCE_DIR}/components/moz/streams/src
+  ${CMAKE_SOURCE_DIR}/components/moz/strings/src
+  ${CMAKE_SOURCE_DIR}/components/moz/threads/src
+  ${CMAKE_SOURCE_DIR}/components/moz/xpcom/src
+  ${CMAKE_SOURCE_DIR}/components/library/base/src/static
+  ${CMAKE_SOURCE_DIR}/components/moz/xpcom/src)
+
+sb_library(SHARED
+  sbCDDeviceController.cpp
+  sbCDDeviceMarshall.cpp
+  sbCDDeviceModule.cpp
+  sbCDDevice.cpp
+  sbCDDeviceRequest.cpp
+  ../../base/src/sbBaseDeviceEventTarget.cpp
+  ../../base/src/sbDeviceCompatibility.cpp
+  ../../base/src/sbDeviceContent.cpp
+  ../../base/src/sbDeviceEvent.cpp
+  ../../base/src/sbDeviceLibrary.cpp
+  ../../base/src/sbDeviceLibraryHelpers.cpp
+  ../../base/src/sbDeviceLibraryMediaSyncSettings.cpp
+  ../../base/src/sbDeviceLibrarySyncSettings.cpp)
+
+add_dependencies(${PROJECT_NAME}
+  sbICDDevices
+  sbIDevice
+  sbIDeviceMarshall
+  sbIDeviceController
+  sbIDeviceBase2
+  sbIAlbumArt
+  sbIJob
+  sbIProperties
+  sbILibraryBase
+  sbILocalDatabaseLibrary
+  sbIMediacoreBase
+  sbITranscodeModule
+  sbIMetadataLookup
+  sbIMediaManager
+  sbIPrompter
+  sbIStrings
+  sbITemporaryFileService)
+
+target_link_libraries(${PROJECT_NAME}
+  sbDeviceController
+  sbDeviceCore
+  sbDeviceMarshall
+  sbLibraryUtils
+  sbErrorConsole
+  sbMozStreams
+  sbMozStringUtils
+  sbMozThreads
+  sbMozVariantUtils
+  sbWatchFolderUtils)

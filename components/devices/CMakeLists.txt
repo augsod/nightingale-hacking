@@ -1,2 +1,5 @@
 add_subdirectory(base)
+add_subdirectory(cd)
+add_subdirectory(controller)
 add_subdirectory(device)
+add_subdirectory(marshall)
