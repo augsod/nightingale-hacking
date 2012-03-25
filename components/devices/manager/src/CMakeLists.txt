@@ -1,0 +1,64 @@
+include(SbLibrary)
+
+project(sbDeviceManager2)
+
+include_directories(
+  ${CMAKE_BINARY_DIR}/components/devices/base/public
+  ${CMAKE_BINARY_DIR}/components/devices/controller/public
+  ${CMAKE_BINARY_DIR}/components/devices/marshall/public
+  ${CMAKE_BINARY_DIR}/components/library/base/public
+  ${CMAKE_BINARY_DIR}/components/library/localdatabase/public
+  ${CMAKE_BINARY_DIR}/components/mediacore/transcode/public
+  ${CMAKE_BINARY_DIR}/components/moz/prompter/public
+  ${CMAKE_BINARY_DIR}/components/moz/temporaryfileservice/public
+  ${CMAKE_BINARY_DIR}/components/moz/strings/components/public
+  ${CMAKE_BINARY_DIR}/components/moz/xpcom/public
+  ${CMAKE_BINARY_DIR}/components/property/public
+  ${CMAKE_SOURCE_DIR}/components/devices/base/src
+  ${CMAKE_SOURCE_DIR}/components/devices/device/src
+  ${CMAKE_SOURCE_DIR}/components/library/base/src/static
+  ${CMAKE_SOURCE_DIR}/components/library/base/src
+  ${CMAKE_SOURCE_DIR}/components/library/localdatabase/src
+  ${CMAKE_SOURCE_DIR}/components/moz/errorconsole/src
+  ${CMAKE_SOURCE_DIR}/components/moz/strings/src
+  ${CMAKE_SOURCE_DIR}/components/moz/threads/src
+  ${CMAKE_SOURCE_DIR}/components/moz/xpcom/src
+  ${CMAKE_SOURCE_DIR}/components/property/src)
+
+sb_library(SHARED
+  sbDeviceManagerModule.cpp
+  sbDeviceManager.cpp
+  ../../base/src/sbBaseDeviceEventTarget.cpp
+  ../../base/src/sbDefaultBaseDeviceInfoRegistrar.cpp
+  ../../base/src/sbDeviceCompatibility.cpp
+  ../../base/src/sbDeviceContent.cpp
+  ../../base/src/sbDeviceEvent.cpp
+  ../../base/src/sbDeviceEventBeforeAddedData.cpp
+  ../../base/src/sbDeviceLibrary.cpp
+  ../../base/src/sbDeviceLibraryHelpers.cpp
+  ../../base/src/sbDeviceLibraryMediaSyncSettings.cpp
+  ../../base/src/sbDeviceLibrarySyncSettings.cpp
+  ../../../moz/xpcom/src/sbWeakReference.cpp)
+
+add_dependencies(${PROJECT_NAME}
+  sbIDeviceBase2
+  sbIDeviceController
+  sbIDeviceMarshall
+  sbILibraryBase
+  sbILocalDatabaseLibrary
+  sbITranscodeModule
+  sbIPrompter
+  sbITemporaryFileService
+  sbIStrings
+  sbIXPCOM
+  sbIProperties)
+
+target_link_libraries(${PROJECT_NAME}
+  sbDeviceCore
+  sbLibraryUtils
+  sbErrorConsole
+  sbMozStreams
+  sbMozStringUtils
+  sbMozThreads
+  sbWatchFolderUtils
+  sbMozVariantUtils)
