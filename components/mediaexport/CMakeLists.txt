@@ -1,2 +1,5 @@
+if(WIN32 OR APPLE)
+  add_subdirectory(agent)
+endif()
 add_subdirectory(public)
 add_subdirectory(src)
