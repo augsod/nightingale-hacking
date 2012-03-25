@@ -538,8 +538,7 @@ nsresult sbRequestThreadQueue::ClearRequestsNoLock(Batch & aBatch)
   NS_ENSURE_STATE(mLock);
 
   // Copy all the requests on the queue to aBatch
-  std::insert_iterator<Batch> insertIter(aBatch, aBatch.end());
-  std::copy(mRequestQueue.begin(), mRequestQueue.end(), insertIter);
+  std::copy(mRequestQueue.begin(), mRequestQueue.end(), aBatch.end());
 
   // Release all of our objects
   std::for_each(mRequestQueue.begin(), mRequestQueue.end(), ReleaseRequestItem);

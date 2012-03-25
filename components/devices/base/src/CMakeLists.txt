@@ -1,0 +1,62 @@
+include(SbLibrary)
+
+project(sbDeviceBase)
+
+include_directories(
+  ${CMAKE_BINARY_DIR}/components/dataremote/public
+  ${CMAKE_BINARY_DIR}/components/devices/base/public
+  ${CMAKE_BINARY_DIR}/components/library/base/public
+  ${CMAKE_BINARY_DIR}/components/library/localdatabase/public
+  ${CMAKE_BINARY_DIR}/components/mediacore/base/public
+  ${CMAKE_BINARY_DIR}/components/mediacore/transcode/public
+  ${CMAKE_BINARY_DIR}/components/moz/prompter/public
+  ${CMAKE_BINARY_DIR}/components/moz/strings/src
+  ${CMAKE_BINARY_DIR}/components/moz/temporaryfileservice/public
+  ${CMAKE_BINARY_DIR}/components/property/public
+  ${CMAKE_SOURCE_DIR}/components/moz/errorconsole/src
+  ${CMAKE_SOURCE_DIR}/components/library/base/src/static
+  ${CMAKE_SOURCE_DIR}/components/library/base/src
+  ${CMAKE_SOURCE_DIR}/components/library/localdatabase/src
+  ${CMAKE_SOURCE_DIR}/components/devices/base/src
+  ${CMAKE_SOURCE_DIR}/components/devices/device/src
+  ${CMAKE_SOURCE_DIR}/components/moz/strings/src
+  ${CMAKE_SOURCE_DIR}/components/moz/threads/src
+  ${CMAKE_SOURCE_DIR}/components/moz/xpcom/src
+  ${CMAKE_SOURCE_DIR}/components/property/src)
+
+sb_library(SHARED
+  sbBaseDeviceEventTarget.cpp
+  sbDefaultBaseDeviceInfoRegistrar.cpp
+  sbDeviceBaseModule.cpp
+  sbDeviceContent.cpp
+  sbDeviceCapsCompatibility.cpp
+  sbDeviceCompatibility.cpp
+  sbDeviceEvent.cpp
+  sbDeviceEventBeforeAddedData.cpp
+  sbDeviceLibrary.cpp
+  sbDeviceLibraryHelpers.cpp
+  sbDeviceLibraryMediaSyncSettings.cpp
+  sbDeviceLibrarySyncDiff.cpp
+  sbDeviceLibrarySyncSettings.cpp
+  sbDeviceProperties.cpp
+  sbDeviceCapabilities.cpp
+  sbDeviceStatus.cpp
+  sbDeviceCapabilitiesUtils.cpp
+  ../../../library/base/src/sbLibraryChangeset.cpp
+  ../../../moz/strings/src/sbTArrayStringEnumerator.cpp)
+
+add_dependencies(${PROJECT_NAME}
+  sbIDataRemote
+  sbIDeviceBase2
+  sbILibraryBase
+  sbILocalDatabaseLibrary
+  sbIMediacoreBase
+  sbTranscodeModule
+  sbIPrompter
+  sbIStrings
+  sbITemporaryFileService
+  sbIProperties)
+
+target_link_libraries(${PROJECT_NAME}
+  sbMozStringUtils
+  sbMozThreads)

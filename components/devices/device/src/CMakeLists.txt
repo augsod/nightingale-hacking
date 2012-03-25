@@ -1,0 +1,87 @@
+include(SbLibrary)
+
+project(sbDeviceCore)
+
+include_directories(
+  ${CMAKE_BINARY_DIR}/components/dataremote/public
+  ${CMAKE_BINARY_DIR}/components/dbengine/public
+  ${CMAKE_BINARY_DIR}/components/devices/base/public
+  ${CMAKE_BINARY_DIR}/components/devices/device/public
+  ${CMAKE_BINARY_DIR}/components/devicesobsolete/base/public
+  ${CMAKE_BINARY_DIR}/components/devicesobsolete/download/public
+  ${CMAKE_BINARY_DIR}/components/job/public
+  ${CMAKE_BINARY_DIR}/components/library/base/public
+  ${CMAKE_BINARY_DIR}/components/library/download/public
+  ${CMAKE_BINARY_DIR}/components/library/localdatabase/public
+  ${CMAKE_BINARY_DIR}/components/mediacore/base/public
+  ${CMAKE_BINARY_DIR}/components/mediacore/transcode/public
+  ${CMAKE_BINARY_DIR}/components/mediamanager/public
+  ${CMAKE_BINARY_DIR}/components/moz/fileutils/public
+  ${CMAKE_BINARY_DIR}/components/moz/prompter/public
+  ${CMAKE_BINARY_DIR}/components/moz/strings/components/public
+  ${CMAKE_BINARY_DIR}/components/moz/temporaryfileservice/public
+  ${CMAKE_BINARY_DIR}/components/moz/windowwatcher/public
+  ${CMAKE_BINARY_DIR}/components/property/public
+  ${CMAKE_BINARY_DIR}/components/watchfolder/public
+  ${CMAKE_BINARY_DIR}/components/mediaimport/filescan/public
+  ${CMAKE_SOURCE_DIR}/components/devices/base/src
+  ${CMAKE_SOURCE_DIR}/components/job/src
+  ${CMAKE_SOURCE_DIR}/components/library/base/src/static
+  ${CMAKE_SOURCE_DIR}/components/library/localdatabase/src/
+  ${CMAKE_SOURCE_DIR}/components/mediacore/transcode/src
+  ${CMAKE_SOURCE_DIR}/components/moz/streams/src
+  ${CMAKE_SOURCE_DIR}/components/moz/strings/src
+  ${CMAKE_SOURCE_DIR}/components/moz/threads/src
+  ${CMAKE_SOURCE_DIR}/components/moz/uri/src
+  ${CMAKE_SOURCE_DIR}/components/moz/variant/src/static
+  ${CMAKE_SOURCE_DIR}/components/moz/xpcom/src
+  ${CMAKE_SOURCE_DIR}/components/moz/errorconsole/src
+  ${CMAKE_SOURCE_DIR}/components/property/src
+  ${CMAKE_SOURCE_DIR}/components/watchfolder/utils)
+
+sb_library(SHARED
+  sbBaseDevice.cpp
+  sbBaseDeviceVolume.cpp
+  sbDeviceEnsureSpaceForWrite.cpp
+  sbDeviceImport.cpp
+  sbDeviceMediaItemDecorator.cpp
+  sbDeviceStatistics.cpp
+  sbDeviceSupportsItemHelper.cpp
+  sbDeviceProgressListener.cpp
+  sbDeviceStreamingHandler.cpp
+  sbDeviceStatusHelper.cpp
+  sbDeviceRequestThreadQueue.cpp
+  sbDeviceTranscoding.cpp
+  sbDeviceImages.cpp
+  sbDeviceUtils.cpp
+  sbDeviceXMLCapabilities.cpp
+  sbDeviceXMLInfo.cpp
+  sbLibraryListenerHelpers.cpp
+  sbRequestItem.cpp
+  sbRequestThreadQueue.cpp
+  sbTranscodeProgressListener.cpp
+  ../../../watchfolder/utils/sbWatchFolderUtils.cpp
+  ../../../moz/xpcom/src/sbWeakReference.cpp)
+
+add_dependencies(${PROJECT_NAME}
+  sbIDataRemote
+  sbIDataEngine
+  sbIDeviceBase2
+  sbIDevice
+  sbIDeviceBase
+  sbIDownloadDevice
+  sbIJob
+  sbILibraryBase
+  sbIMediaItemDownloadService
+  sbILocalDatabaseLibrary
+  sbIMediacore
+  sbITranscodeModule
+  sbIMediaManager
+  sbIFileUtils
+  sbIPrompter
+  sbIStrings
+  sbITemporaryFileService
+  sbIWindowWatcher
+  sbIProperties
+  sbIWatchFolderService
+  sbIFileScan)
