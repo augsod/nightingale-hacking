@@ -58,5 +58,11 @@ add_dependencies(${PROJECT_NAME}
   sbIProperties)
 
 target_link_libraries(${PROJECT_NAME}
+  sbDeviceCore
+  sbLibraryUtils
+  sbErrorConsole
+  sbMozStreams
   sbMozStringUtils
-  sbMozThreads)
+  sbMozThreads
+  sbMozVariantUtils
+  sbWatchFolderUtils)
