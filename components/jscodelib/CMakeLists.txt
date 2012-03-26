@@ -1,0 +1,21 @@
+include(SbJSModule)
+
+sb_js_module(
+  AddOnUtils.jsm
+  ArrayConverter.jsm
+  DebugUtils.jsm
+  DropHelper.jsm
+  DOMUtils.jsm
+  FolderUtils.jsm
+  GeneratorThread.jsm
+  LocalStore.jsm
+  ObserverUtils.jsm
+  PlatformUtils.jsm
+  PlayQueueUtils.jsm
+  RDFHelper.jsm
+  SBDataRemoteUtils.jsm
+  SBTimer.jsm
+  SBUtils.jsm
+  StringUtils.jsm
+  URLUtils.jsm
+  WindowUtils.jsm)
