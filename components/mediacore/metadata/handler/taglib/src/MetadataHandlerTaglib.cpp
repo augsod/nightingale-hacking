@@ -386,7 +386,7 @@ nsresult sbMetadataHandlerTaglib::ReadInternal(
         if (NS_SUCCEEDED(result))
         {
             PRBool useSpec = PR_TRUE;
-            #if XP_UNIX && !XP_MACOSX
+            #if defined(XP_UNIX) && !defined(XP_MACOSX)
             if (StringBeginsWith(urlSpec, NS_LITERAL_CSTRING("file://"))) {
                 nsCString path(Substring(urlSpec, NS_ARRAY_LENGTH("file://") - 1));
                 LOG(("looking at path %s\n", path.get()));
@@ -412,7 +412,7 @@ nsresult sbMetadataHandlerTaglib::ReadInternal(
                         LOG(("failed to set persistent descriptor %s\n", unescapedPath.get()));
                         break;
                     }
-                    #if PR_LOGGING
+                    #ifdef PR_LOGGING
                       result = localFile->GetPersistentDescriptor(path);
                       if (NS_SUCCEEDED(result)) {
                         LOG(("file path is %s\n", path.get()));
@@ -437,7 +437,7 @@ nsresult sbMetadataHandlerTaglib::ReadInternal(
         }
 
         if (NS_SUCCEEDED(result)) {
-          #if XP_UNIX && !XP_MACOSX
+          #if defined(XP_UNIX) && !defined(XP_MACOSX)
             result = pFile->GetNativePath(mMetadataPath);
           #else
             nsString metadataPathU16;
@@ -590,7 +590,7 @@ nsresult sbMetadataHandlerTaglib::WriteInternal(
     }
 
     if (NS_SUCCEEDED(result)) {
-      #if XP_UNIX && !XP_MACOSX
+      #if defined(XP_UNIX) && !defined(XP_MACOSX)
         result = pFile->GetNativePath(mMetadataPath);
       #else
         nsCOMPtr<sbILibraryUtils> libUtils =
@@ -636,7 +636,7 @@ nsresult sbMetadataHandlerTaglib::WriteInternal(
       // on windows, we leave this as an nsAString
       // beginreading doesn't promise to return a null terminated string
       // this is RFB
-#if XP_WIN
+#ifdef XP_WIN
       NS_ConvertUTF8toUTF16 filePath(mMetadataPath);
 #else
       nsACString &filePath = mMetadataPath;
