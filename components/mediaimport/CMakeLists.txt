@@ -1,3 +1,5 @@
 add_subdirectory(directory)
 add_subdirectory(filescan)
+add_subdirectory(library)
 add_subdirectory(playlist)
+add_subdirectory(uri)

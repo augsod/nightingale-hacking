@@ -45,12 +45,11 @@ Only in compiled/components/mediacore/transcode: test
 Only in compiled/components/mediaexport: agent
 Only in compiled/components/mediaexport: playlist
 Only in compiled/components/mediaexport: test
-Only in compiled/components/mediaimport/directory: src
 Only in compiled/components/mediaimport/directory: test
-Only in compiled/components/mediaimport: library
+Only in compiled/components/mediaimport/library: itunes
 Only in compiled/components/mediaimport/playlist: src
 Only in compiled/components/mediaimport/playlist: test
-Only in compiled/components/mediaimport: uri
+Only in compiled/components/mediaimport/uri: public
 Only in compiled/components/mediamanager: test
 Only in compiled/components: mediapages
 Only in compiled/components/metrics: src
@@ -97,13 +96,11 @@ Only in compiled/dist/components: sbAddToPlaylist.jsm
 Files compiled/dist/components/sbApplicationController.js and ccompiled/dist/components/sbApplicationController.js differ
 Files compiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js and ccompiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js differ
 Only in compiled/dist/components: sbDeviceServicePaneService.js
-Only in compiled/dist/components: sbDirectoryImportService.js
 Only in compiled/dist/components: sbFileDownloader.js
 Only in compiled/dist/components: sbGlobalHotkeys.js
 Only in compiled/dist/components: sbHotkeyActions.js
 Only in compiled/dist/components: sbJobProgressService.js
 Only in compiled/dist/components: sbLastFmWebServices.js
-Only in compiled/dist/components: sbLibraryImporterManager.js
 Only in compiled/dist/components: sbLibrarySearch.js
 Only in compiled/dist/components: sbLibraryServicePaneService.js
 Only in compiled/dist/components: sbM3UPlaylistWriter.js
@@ -129,7 +126,6 @@ Only in compiled/dist/components: sbSmartPlaylistPropertyRegistrar.js
 Only in compiled/dist/components: sbSongbirdProtocol.js
 Only in compiled/dist/components: sbTestDisplayPaneProvider.js
 Only in compiled/dist/components: sbTestHarness.js
-Only in compiled/dist/components: sbURIImportService.js
 Only in compiled/dist/components: sbURLFormatter.js
 Only in compiled/dist: defaults
 Only in compiled/dist: extensions
