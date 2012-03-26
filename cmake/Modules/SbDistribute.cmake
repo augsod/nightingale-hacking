@@ -28,9 +28,16 @@ macro(SB_DISTRIBUTE_PREPROCESS)
   file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/dist)
   foreach(src ${ARGN})
     set(cmd perl ${preprocessor} ${definitions}
-      ${CMAKE_CURRENT_SOURCE_DIR}/${src}.in > ${CMAKE_BINARY_DIR}/dist/${src})
+      ${CMAKE_CURRENT_SOURCE_DIR}/${src}.in >)
+
+    #TODO: Pick only of these to run, there is no reason to have both
+    #but it is what the old build system does
 
     add_custom_target(${src} ALL
-      COMMAND ${cmd})
+      COMMAND ${cmd} ${CMAKE_BINARY_DIR}/dist/${src})
+
+    add_custom_target(${src}2 ALL
+      COMMAND ${cmd} ${CMAKE_CURRENT_BINARY_DIR}/${src})
+
   endforeach()
 endmacro()

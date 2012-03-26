@@ -1,7 +1,6 @@
-Only in compiled/app: application.ini
+Files compiled/app/application.ini and ccompiled/app/application.ini differ
 Only in compiled/app: branding
 Only in compiled/app: content
-Only in compiled/app: nightingale.ini
 Only in compiled/app: preferences
 Only in compiled/app: profile
 Only in compiled/app: skin
