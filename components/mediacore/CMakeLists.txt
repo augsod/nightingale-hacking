@@ -1,4 +1,5 @@
 add_subdirectory(base)
+add_subdirectory(gstreamer)
 add_subdirectory(manager)
 add_subdirectory(metadata)
 add_subdirectory(playback)

@@ -36,6 +36,8 @@ add_subdirectory(remoteapi)
 add_subdirectory(search)
 add_subdirectory(servicepane)
 add_subdirectory(sqlbuilder)
+#TODO: only build this when testing
+add_subdirectory(testharness)
 add_subdirectory(update)
 add_subdirectory(watchfolder)
 add_subdirectory(webservices)

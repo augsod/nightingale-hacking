@@ -13,8 +13,9 @@ sb_js_component(
   sbColumnSpecParser.jsm
   sbLibrarySearchSuggester.js)
 
-# TODO: add this when we start building tests
-# sbMediaItemControllerTest.js
+# TODO: only build this when testing
+sb_js_component(
+  sbMediaItemControllerTest.js)
 
 sb_js_module(
   sbLibraryUtils.jsm

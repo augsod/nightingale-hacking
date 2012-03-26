@@ -11,7 +11,7 @@ Only in compiled/components/devices/cd: mock
 Only in compiled/components/devices/cd: test
 Only in compiled/components/devices: content
 Only in compiled/components/devices/device: test
-Only in compiled/components/devices/firmware: mock
+Only in compiled/components/devices/firmware/mock: public
 Only in compiled/components/devices/firmware: test
 Only in compiled/components/devices/manager: public
 Only in compiled/components/devices/manager: test
@@ -21,7 +21,8 @@ Only in compiled/components/feathers: test
 Only in compiled/components/filesystemevents: macosx
 Only in compiled/components/filesystemevents: test
 Only in compiled/components/filesystemevents: win32
-Only in compiled/components/integration: src
+Only in compiled/components/integration/src: macosx
+Only in compiled/components/integration/src: win32
 Only in compiled/components/intl/src: content
 Only in compiled/components/intl: test
 Only in compiled/components/jscodelib: test
@@ -32,28 +33,30 @@ Only in compiled/components/library/localdatabase: content
 Only in compiled/components/library/localdatabase: perf
 Only in compiled/components/library/localdatabase: test
 Only in compiled/components/mediacore/base: test
-Only in compiled/components/mediacore: gstreamer
+Only in compiled/components/mediacore/gstreamer: content
+Only in compiled/components/mediacore/gstreamer: encode-profiles
+Only in compiled/components/mediacore/gstreamer: public
+Only in compiled/components/mediacore/gstreamer/src: metadata
+Only in compiled/components/mediacore/gstreamer: stub
+Only in compiled/components/mediacore/gstreamer: test
 Only in compiled/components/mediacore/manager: test
 Only in compiled/components/mediacore/metadata/handler: wma
 Only in compiled/components/mediacore/metadata/lookup/manager: test
-Only in compiled/components/mediacore/metadata/lookup: testprovider
 Only in compiled/components/mediacore/metadata/manager: test
 Only in compiled/components/mediacore/playback/history: content
 Only in compiled/components/mediacore/playback/history: test
 Only in compiled/components/mediacore/transcode: test
 Only in compiled/components/mediaexport: agent
-Only in compiled/components/mediaexport: playlist
+Only in compiled/components/mediaexport/playlist: test
 Only in compiled/components/mediaexport: test
 Only in compiled/components/mediaimport/directory: test
 Only in compiled/components/mediaimport/library: itunes
-Only in compiled/components/mediaimport/playlist: src
 Only in compiled/components/mediaimport/playlist: test
 Only in compiled/components/mediamanager: test
 Only in compiled/components/mediapages: public
 Only in compiled/components/mediapages: test
 Only in compiled/components/moz/clipboard: test
 Only in compiled/components/moz/dirprovider: test
-Only in compiled/components/moz/filedownloader: src
 Only in compiled/components/moz/filedownloader: test
 Only in compiled/components/moz/fileutils: test
 Only in compiled/components/moz/process/src: windows
@@ -70,7 +73,8 @@ Only in compiled/components/search: public
 Only in compiled/components/servicepane: public
 Only in compiled/components/servicepane: test
 Only in compiled/components/sqlbuilder: test
-Only in compiled/components: testharness
+Only in compiled/components/testharness: basetests
+Only in compiled/components/testharness: public
 Only in compiled/components/watchfolder: test
 Only in compiled/dist: application.ini
 Only in compiled/dist: blocklist.xml
@@ -80,24 +84,10 @@ Only in compiled/dist/components: gst_libs.txt
 Only in compiled/dist/components: httpd.js
 Only in compiled/dist/components: nsBrowserGlue.js
 Only in compiled/dist/components: nsSidebar.js
-Only in compiled/dist/components: sbAboutGStreamer.js
 Files compiled/dist/components/sbApplicationController.js and ccompiled/dist/components/sbApplicationController.js differ
 Files compiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js and ccompiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js differ
-Only in compiled/dist/components: sbFileDownloader.js
-Only in compiled/dist/components: sbGlobalHotkeys.js
-Only in compiled/dist/components: sbHotkeyActions.js
 Files compiled/dist/components/sbJobProgressService.js and ccompiled/dist/components/sbJobProgressService.js differ
-Only in compiled/dist/components: sbM3UPlaylistWriter.js
-Only in compiled/dist/components: sbMediaItemControllerTest.js
-Only in compiled/dist/components: sbMetadataLookupTestProvider.js
-Only in compiled/dist/components: sbMockFirmwareHandlerURLService.js
-Only in compiled/dist/components: sbPlaylistHandlerModule.js
-Only in compiled/dist/components: sbPlaylistReaderListener.js
-Only in compiled/dist/components: sbPlaylistReaderManager.js
-Only in compiled/dist/components: sbPlaylistWriterManager.js
 Files compiled/dist/components/sbSmartPlaylistPropertyRegistrar.js and ccompiled/dist/components/sbSmartPlaylistPropertyRegistrar.js differ
-Only in compiled/dist/components: sbTestDisplayPaneProvider.js
-Only in compiled/dist/components: sbTestHarness.js
 Only in compiled/dist: defaults
 Only in compiled/dist: extensions
 Only in compiled/dist: gst-plugins
