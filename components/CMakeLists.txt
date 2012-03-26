@@ -1,3 +1,4 @@
+add_subdirectory(addonmetadata)
 add_subdirectory(albumart)
 add_subdirectory(bundle)
 add_subdirectory(commandline)
