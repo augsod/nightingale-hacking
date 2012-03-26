@@ -24,7 +24,6 @@ Only in compiled/components/filesystemevents: win32
 Only in compiled/components/integration: src
 Only in compiled/components/intl/src: content
 Only in compiled/components/intl: test
-Only in compiled/components/job: src
 Only in compiled/components/jscodelib: test
 Only in compiled/components/library/base: test
 Only in compiled/components/library/download: test
@@ -88,7 +87,7 @@ Files compiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js and ccompil
 Only in compiled/dist/components: sbFileDownloader.js
 Only in compiled/dist/components: sbGlobalHotkeys.js
 Only in compiled/dist/components: sbHotkeyActions.js
-Only in compiled/dist/components: sbJobProgressService.js
+Files compiled/dist/components/sbJobProgressService.js and ccompiled/dist/components/sbJobProgressService.js differ
 Only in compiled/dist/components: sbM3UPlaylistWriter.js
 Only in compiled/dist/components: sbMediaItemControllerTest.js
 Only in compiled/dist/components: sbMetadataLookupTestProvider.js
@@ -105,7 +104,6 @@ Only in compiled/dist: extensions
 Only in compiled/dist: gst-plugins
 Only in compiled/dist: gstreamer
 Only in compiled/dist/jsmodules: Distribution.jsm
-Only in compiled/dist/jsmodules: SBJobUtils.jsm
 Only in compiled/dist: lib
 Only in compiled/dist: nightingale
 Only in compiled/dist: nightingale-bin
