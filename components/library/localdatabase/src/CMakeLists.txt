@@ -1,8 +1,19 @@
 include(SbLibrary)
+include(SbJSComponent)
+include(SbJSModule)
+
+add_subdirectory(migrationhandlers)
 
 project(sbLocalDatabaseLibrary)
 
 find_package(Sqlite3)
+
+sb_js_component(
+  sbSmartMediaListsUpdater.js
+  sbLocalDatabaseMigrationHelper.js)
+
+sb_js_module(
+  sbLocalDatabaseMigrationUtils.jsm)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/dbengine/public

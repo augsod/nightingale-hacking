@@ -1,0 +1,27 @@
+include(SbJSComponent)
+
+sb_js_component(
+  sbMigrate061to070.js
+  sbMigrate070RC1to070.js
+  sbMigrate070RC2to070.js
+  sbMigrate070To08pre1.js
+  sbMigrate08pre1To08pre2.js
+  sbMigrate08pre2To08pre3.js
+  sbMigrate08pre3To08pre4.js
+  sbMigrate10To11pre1.js
+  sbMigrate11pre1To11pre1b.js
+  sbMigrate11pre1bTo11pre1c.js
+  sbMigrate11pre1cTo11pre1d.js
+  sbMigrate11pre1dTo11pre1e.js
+  sbMigrate11pre1eTo11pre1f.js
+  sbMigrate12pre1To12pre1b.js
+  sbMigrate12To13pre.js
+  sbMigrate13to14.wmaprotected.js
+  sbMigrate14to15pre0.contentType.js
+  sbMigrate14to15pre.smartplaylist.js
+  sbMigrate14to17pre0.smartplaylist.js
+  sbMigrate18to19pre0.fileURL.js
+  sbMigrate18to19pre0.discSortTrackSort.js
+  sbMigrate18to19pre0.index.js
+  sbMigrate18to19pre0.indexSort.js
+  sbMigrate19to110pre0.addMetadataHashIdentity.js)

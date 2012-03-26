@@ -1,8 +1,26 @@
 include(SbLibrary)
+include(SbJSComponent)
+include(SbJSModule)
 
 add_subdirectory(static)
 
 project(sbLibraryManager)
+
+sb_js_component(
+  sbDynamicPlaylist.js
+  sbLibraryUtils.jsm
+  sbTimeFormatter.jsm
+  sbColumnSpecParser.jsm
+  sbLibrarySearchSuggester.js)
+
+# TODO: add this when we start building tests
+# sbMediaItemControllerTest.js
+
+sb_js_module(
+  sbLibraryUtils.jsm
+  sbTimeFormatter.jsm
+  sbColumnSpecParser.jsm
+  sbSmartMediaListColumnSpecUpdater.jsm)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/library/base/public

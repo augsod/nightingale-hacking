@@ -31,7 +31,6 @@ Only in compiled/components/library/download: test
 Only in compiled/components/library/identity: test
 Only in compiled/components/library/localdatabase: content
 Only in compiled/components/library/localdatabase: perf
-Only in compiled/components/library/localdatabase/src: migrationhandlers
 Only in compiled/components/library/localdatabase: test
 Only in compiled/components/mediacore/base: test
 Only in compiled/components/mediacore: gstreamer
@@ -97,11 +96,9 @@ Only in compiled/dist/components: sbAboutRedirector.js
 Only in compiled/dist/components: sbAddOnBundleUpdateService.js
 Only in compiled/dist/components: sbAddToPlaylist.jsm
 Files compiled/dist/components/sbApplicationController.js and ccompiled/dist/components/sbApplicationController.js differ
-Only in compiled/dist/components: sbColumnSpecParser.jsm
 Files compiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js and ccompiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js differ
 Only in compiled/dist/components: sbDeviceServicePaneService.js
 Only in compiled/dist/components: sbDirectoryImportService.js
-Only in compiled/dist/components: sbDynamicPlaylist.js
 Only in compiled/dist/components: sbFileDownloader.js
 Only in compiled/dist/components: sbGlobalHotkeys.js
 Only in compiled/dist/components: sbHotkeyActions.js
@@ -109,10 +106,7 @@ Only in compiled/dist/components: sbJobProgressService.js
 Only in compiled/dist/components: sbLastFmWebServices.js
 Only in compiled/dist/components: sbLibraryImporterManager.js
 Only in compiled/dist/components: sbLibrarySearch.js
-Only in compiled/dist/components: sbLibrarySearchSuggester.js
 Only in compiled/dist/components: sbLibraryServicePaneService.js
-Only in compiled/dist/components: sbLibraryUtils.jsm
-Only in compiled/dist/components: sbLocalDatabaseMigrationHelper.js
 Only in compiled/dist/components: sbM3UPlaylistWriter.js
 Only in compiled/dist/components: sbMediacoreErrorHandler.js
 Only in compiled/dist/components: sbMediaItemControllerTest.js
@@ -122,29 +116,6 @@ Only in compiled/dist/components: sbMetadataLookupJob.js
 Only in compiled/dist/components: sbMetadataLookupManager.js
 Only in compiled/dist/components: sbMetadataLookupTestProvider.js
 Only in compiled/dist/components: sbMetrics.js
-Only in compiled/dist/components: sbMigrate061to070.js
-Only in compiled/dist/components: sbMigrate070RC1to070.js
-Only in compiled/dist/components: sbMigrate070RC2to070.js
-Only in compiled/dist/components: sbMigrate070To08pre1.js
-Only in compiled/dist/components: sbMigrate08pre1To08pre2.js
-Only in compiled/dist/components: sbMigrate08pre2To08pre3.js
-Only in compiled/dist/components: sbMigrate08pre3To08pre4.js
-Only in compiled/dist/components: sbMigrate10To11pre1.js
-Only in compiled/dist/components: sbMigrate11pre1bTo11pre1c.js
-Only in compiled/dist/components: sbMigrate11pre1cTo11pre1d.js
-Only in compiled/dist/components: sbMigrate11pre1dTo11pre1e.js
-Only in compiled/dist/components: sbMigrate11pre1eTo11pre1f.js
-Only in compiled/dist/components: sbMigrate11pre1To11pre1b.js
-Only in compiled/dist/components: sbMigrate12pre1To12pre1b.js
-Only in compiled/dist/components: sbMigrate12To13pre.js
-Only in compiled/dist/components: sbMigrate13to14.wmaprotected.js
-Only in compiled/dist/components: sbMigrate14to15pre0.contentType.js
-Only in compiled/dist/components: sbMigrate14to15pre.smartplaylist.js
-Only in compiled/dist/components: sbMigrate14to17pre0.smartplaylist.js
-Only in compiled/dist/components: sbMigrate18to19pre0.discSortTrackSort.js
-Only in compiled/dist/components: sbMigrate18to19pre0.fileURL.js
-Only in compiled/dist/components: sbMigrate18to19pre0.index.js
-Only in compiled/dist/components: sbMigrate18to19pre0.indexSort.js
 Only in compiled/dist/components: sbMockFirmwareHandlerURLService.js
 Only in compiled/dist/components: sbMoveRenameHelper.js
 Only in compiled/dist/components: sbOSDControlService.js
@@ -160,12 +131,10 @@ Only in compiled/dist/components: sbRemoveHelper.js
 Only in compiled/dist/components: sbSearchSuggester.js
 Only in compiled/dist/components: sbServicePaneService.js
 Only in compiled/dist/components: sbShutdownService.js
-Only in compiled/dist/components: sbSmartMediaListsUpdater.js
 Only in compiled/dist/components: sbSmartPlaylistPropertyRegistrar.js
 Only in compiled/dist/components: sbSongbirdProtocol.js
 Only in compiled/dist/components: sbTestDisplayPaneProvider.js
 Only in compiled/dist/components: sbTestHarness.js
-Only in compiled/dist/components: sbTimeFormatter.jsm
 Only in compiled/dist/components: sbURIImportService.js
 Only in compiled/dist/components: sbURLFormatter.js
 Only in compiled/dist: defaults
@@ -177,13 +146,8 @@ Only in compiled/dist/jsmodules: kPlaylistCommands.jsm
 Only in compiled/dist/jsmodules: sbAddToDevice.jsm
 Only in compiled/dist/jsmodules: sbAddToLibrary.jsm
 Only in compiled/dist/jsmodules: sbAddToPlaylist.jsm
-Only in compiled/dist/jsmodules: sbColumnSpecParser.jsm
 Only in compiled/dist/jsmodules: SBJobUtils.jsm
-Only in compiled/dist/jsmodules: sbLibraryUtils.jsm
-Only in compiled/dist/jsmodules: sbLocalDatabaseMigrationUtils.jsm
 Only in compiled/dist/jsmodules: sbMetadataUtils.jsm
-Only in compiled/dist/jsmodules: sbSmartMediaListColumnSpecUpdater.jsm
-Only in compiled/dist/jsmodules: sbTimeFormatter.jsm
 Only in compiled/dist/jsmodules: ServicePaneHelper.jsm
 Only in compiled/dist: lib
 Only in compiled/dist: nightingale
