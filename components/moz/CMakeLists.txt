@@ -1,5 +1,6 @@
 add_subdirectory(clipboard)
 add_subdirectory(dirprovider)
+add_subdirectory(distribution)
 add_subdirectory(errorconsole)
 add_subdirectory(filedownloader)
 add_subdirectory(fileutils)

@@ -53,7 +53,6 @@ Only in compiled/components/mediapages: public
 Only in compiled/components/mediapages: test
 Only in compiled/components/moz/clipboard: test
 Only in compiled/components/moz/dirprovider: test
-Only in compiled/components/moz: distribution
 Only in compiled/components/moz/filedownloader: src
 Only in compiled/components/moz/filedownloader: test
 Only in compiled/components/moz/fileutils: test
@@ -103,7 +102,6 @@ Only in compiled/dist: defaults
 Only in compiled/dist: extensions
 Only in compiled/dist: gst-plugins
 Only in compiled/dist: gstreamer
-Only in compiled/dist/jsmodules: Distribution.jsm
 Only in compiled/dist: lib
 Only in compiled/dist: nightingale
 Only in compiled/dist: nightingale-bin

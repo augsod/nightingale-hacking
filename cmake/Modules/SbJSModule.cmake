@@ -8,3 +8,12 @@ macro(SB_JS_MODULE)
       ${CMAKE_BINARY_DIR}/dist/jsmodules/${src})
   endforeach()
 endmacro()
+
+macro(SB_JS_MODULE_CUSTOM in out)
+  # When we start linking more of this together, see if we can just put this
+  # all in ${CMAKE_CURRENT_BINARY_DIR}
+  file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/dist/jsmodules)
+  configure_file(
+    ${in}
+    ${CMAKE_BINARY_DIR}/dist/jsmodules/${out})
+endmacro()
