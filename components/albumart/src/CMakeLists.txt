@@ -1,6 +1,10 @@
 include(SbLibrary)
+include(SbJSModule)
 
 project(sbAlbumArt)
+
+sb_js_module(
+  sbCoverHelper.jsm)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/albumart/public
