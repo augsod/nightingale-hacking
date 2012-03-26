@@ -80,7 +80,7 @@ Only in compiled/components/sqlbuilder: test
 Only in compiled/components/testharness: basetests
 Only in compiled/components/testharness: public
 Only in compiled/components/watchfolder: test
-Only in compiled/dist: application.ini
+Files compiled/dist/application.ini and ccompiled/dist/application.ini differ
 Only in compiled/dist: chrome
 Only in compiled/dist/components: fuelApplication.js
 Only in compiled/dist/components: gst_libs.txt
@@ -98,7 +98,6 @@ Only in compiled/dist: gstreamer
 Only in compiled/dist: lib
 Only in compiled/dist: nightingale
 Only in compiled/dist: nightingale-bin
-Only in compiled/dist: nightingale.ini
 Only in compiled/dist: plugins
 Only in compiled/dist: scripts
 Only in compiled/dist: searchplugins

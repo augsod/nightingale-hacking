@@ -4,5 +4,6 @@ sb_distribute(
   blocklist.xml
   updater.ini)
 
-#  $(CURDIR)/application.ini \
-#  $(CURDIR)/nightingale.ini \
+sb_distribute_preprocess(
+  application.ini
+  nightingale.ini)
