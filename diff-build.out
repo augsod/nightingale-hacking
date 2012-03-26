@@ -15,8 +15,7 @@ Only in compiled/components/devices/firmware: mock
 Only in compiled/components/devices/firmware: test
 Only in compiled/components/devices/manager: public
 Only in compiled/components/devices/manager: test
-Only in compiled/components: displaypanes
-Only in compiled/components: draganddrop
+Only in compiled/components/displaypanes: test
 Only in compiled/components: faceplate
 Only in compiled/components: feathers
 Only in compiled/components/filesystemevents: macosx
@@ -98,15 +97,10 @@ Only in compiled/dist/components: sbAboutRedirector.js
 Only in compiled/dist/components: sbAddOnBundleUpdateService.js
 Only in compiled/dist/components: sbAddToPlaylist.jsm
 Files compiled/dist/components/sbApplicationController.js and ccompiled/dist/components/sbApplicationController.js differ
-Only in compiled/dist/components: sbAutoDownloader.js
 Only in compiled/dist/components: sbColumnSpecParser.jsm
 Files compiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js and ccompiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js differ
 Only in compiled/dist/components: sbDeviceServicePaneService.js
 Only in compiled/dist/components: sbDirectoryImportService.js
-Only in compiled/dist/components: sbDisplayPanes.js
-Only in compiled/dist/components: sbDndSourceTracker.js
-Only in compiled/dist/components: sbDownloadDeviceHelper.js
-Only in compiled/dist/components: sbDownloadDeviceServicePaneModule.js
 Only in compiled/dist/components: sbDynamicPlaylist.js
 Only in compiled/dist/components: sbFaceplateManager.js
 Only in compiled/dist/components: sbFeathersManager.js

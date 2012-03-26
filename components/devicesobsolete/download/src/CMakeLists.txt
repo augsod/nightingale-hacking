@@ -1,6 +1,12 @@
 include(SbLibrary)
+include(SbJSComponent)
 
 project(sbDownloadDevice)
+
+sb_js_component(
+  sbAutoDownloader.js
+  sbDownloadDeviceHelper.js
+  sbDownloadDeviceServicePaneModule.js)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/devicesobsolete/base/public
