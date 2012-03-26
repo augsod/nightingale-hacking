@@ -99,12 +99,8 @@ Only in compiled/dist/components: sbAddOnBundleUpdateService.js
 Only in compiled/dist/components: sbAddToPlaylist.jsm
 Files compiled/dist/components/sbApplicationController.js and ccompiled/dist/components/sbApplicationController.js differ
 Only in compiled/dist/components: sbAutoDownloader.js
-Only in compiled/dist/components: sbBaseDeviceHelper.js
-Only in compiled/dist/components: sbCDRipServicePaneService.js
 Only in compiled/dist/components: sbColumnSpecParser.jsm
-Only in compiled/dist/components: sbDeviceErrorMonitor.js
-Only in compiled/dist/components: sbDeviceEventMonitor.js
-Only in compiled/dist/components: sbDeviceFirmwareAutoCheckForUpdate.js
+Files compiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js and ccompiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js differ
 Only in compiled/dist/components: sbDeviceServicePaneService.js
 Only in compiled/dist/components: sbDirectoryImportService.js
 Only in compiled/dist/components: sbDisplayPanes.js
@@ -201,7 +197,6 @@ Only in compiled/dist/jsmodules: RDFHelper.jsm
 Only in compiled/dist/jsmodules: sbAddToDevice.jsm
 Only in compiled/dist/jsmodules: sbAddToLibrary.jsm
 Only in compiled/dist/jsmodules: sbAddToPlaylist.jsm
-Only in compiled/dist/jsmodules: sbCDDeviceUtils.jsm
 Only in compiled/dist/jsmodules: sbColumnSpecParser.jsm
 Only in compiled/dist/jsmodules: SBDataRemoteUtils.jsm
 Only in compiled/dist/jsmodules: SBJobUtils.jsm

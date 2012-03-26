@@ -1,6 +1,12 @@
 include(SbLibrary)
+include(SbJSComponent)
 
 project(sbDeviceCore)
+
+sb_js_component(
+  sbBaseDeviceHelper.js
+  sbDeviceErrorMonitor.js
+  sbDeviceEventMonitor.js)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/dataremote/public

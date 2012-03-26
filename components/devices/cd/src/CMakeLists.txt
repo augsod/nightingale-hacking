@@ -1,6 +1,14 @@
 include(SbLibrary)
+include(SbJSComponent)
+include(SbJSModule)
 
 project(sbCDDevice)
+
+sb_js_component(
+  sbCDRipServicePaneService.js)
+
+sb_js_module(
+  sbCDDeviceUtils.jsm)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/devices/cd/public

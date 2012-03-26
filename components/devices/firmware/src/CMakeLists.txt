@@ -1,6 +1,10 @@
 include(SbLibrary)
+include(SbJSComponent)
 
 project(sbDeviceFirmwareUpdater)
+
+sb_js_component(
+  sbDeviceFirmwareAutoCheckForUpdate.js)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/devices/base/public
