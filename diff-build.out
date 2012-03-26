@@ -35,8 +35,6 @@ Only in compiled/components/library/localdatabase: test
 Only in compiled/components/mediacore/base: test
 Only in compiled/components/mediacore/gstreamer: content
 Only in compiled/components/mediacore/gstreamer: encode-profiles
-Only in compiled/components/mediacore/gstreamer: public
-Only in compiled/components/mediacore/gstreamer/src: metadata
 Only in compiled/components/mediacore/gstreamer: stub
 Only in compiled/components/mediacore/gstreamer: test
 Only in compiled/components/mediacore/manager: test
