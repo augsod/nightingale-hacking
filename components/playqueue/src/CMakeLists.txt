@@ -1,6 +1,10 @@
 include(SbLibrary)
+include(SbJSComponent)
 
 project(sbPlayQueueService)
+
+sb_js_component(
+  sbPlayQueueContentInfo.js)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/dataremote/public

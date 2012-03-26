@@ -1,6 +1,20 @@
 include(SbLibrary)
+include(SbJSComponent)
+include(SbJSModule)
 
 project(sbPlaylistCommands)
+
+sb_js_component(
+  sbPlaylistCommandsBuilder.js
+  sbPublicPlaylistCommands.js
+  sbAddToPlaylist.jsm
+  kPlaylistCommands.jsm)
+
+sb_js_module(
+  sbAddToPlaylist.jsm
+  sbAddToDevice.jsm
+  sbAddToLibrary.jsm
+  kPlaylistCommands.jsm)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/playlistcommands/public

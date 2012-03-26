@@ -1,6 +1,10 @@
 include(SbLibrary)
+include(SbJSComponent)
 
 project(sbProperties)
+
+sb_js_component(
+  sbSmartPlaylistPropertyRegistrar.js)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/intl/public

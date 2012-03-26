@@ -1,6 +1,11 @@
 include(SbLibrary)
+include(SbJSComponent)
 
 project(sbWatchFolderService)
+
+sb_js_component(
+  sbMoveRenameHelper.js
+  sbRemoveHelper.js)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/filesystemevents/base/public
