@@ -1,5 +1,6 @@
 add_subdirectory(addonmetadata)
 add_subdirectory(albumart)
+add_subdirectory(appstartup)
 add_subdirectory(bundle)
 add_subdirectory(commandline)
 add_subdirectory(contenthandling)

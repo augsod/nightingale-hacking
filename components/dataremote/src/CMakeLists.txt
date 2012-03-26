@@ -1,6 +1,10 @@
 include(SbLibrary)
+include(SbJSComponent)
 
 project(sbDataRemote)
+
+sb_js_component(
+  sbDataRemote.js)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/dataremote/public
