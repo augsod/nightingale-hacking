@@ -1,6 +1,10 @@
 include(SbLibrary)
+include(SbJSComponent)
 
 project(sbMediacoreBase)
+
+sb_js_component(
+  sbOSDControlService.js)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/integration/public

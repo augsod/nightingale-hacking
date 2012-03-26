@@ -1,6 +1,10 @@
 include(SbLibrary)
+include(SbJSComponent)
 
 project(sbMediacoreManager)
+
+sb_js_component(
+  sbMediacoreErrorHandler.js)
 
 include_directories(
   ${CMAKE_BINARY_DIR}/components/dataremote/public

@@ -36,7 +36,6 @@ Only in compiled/components/mediacore/base: test
 Only in compiled/components/mediacore: gstreamer
 Only in compiled/components/mediacore/manager: test
 Only in compiled/components/mediacore/metadata: handler
-Only in compiled/components/mediacore/metadata/lookup/manager: src
 Only in compiled/components/mediacore/metadata/lookup/manager: test
 Only in compiled/components/mediacore/metadata/lookup: testprovider
 Only in compiled/components/mediacore/metadata/manager: test
@@ -108,17 +107,12 @@ Only in compiled/dist/components: sbLibraryImporterManager.js
 Only in compiled/dist/components: sbLibrarySearch.js
 Only in compiled/dist/components: sbLibraryServicePaneService.js
 Only in compiled/dist/components: sbM3UPlaylistWriter.js
-Only in compiled/dist/components: sbMediacoreErrorHandler.js
 Only in compiled/dist/components: sbMediaItemControllerTest.js
 Only in compiled/dist/components: sbMediaPageManager.js
-Only in compiled/dist/components: sbMetadataAlbumDetail.js
-Only in compiled/dist/components: sbMetadataLookupJob.js
-Only in compiled/dist/components: sbMetadataLookupManager.js
 Only in compiled/dist/components: sbMetadataLookupTestProvider.js
 Only in compiled/dist/components: sbMetrics.js
 Only in compiled/dist/components: sbMockFirmwareHandlerURLService.js
 Only in compiled/dist/components: sbMoveRenameHelper.js
-Only in compiled/dist/components: sbOSDControlService.js
 Only in compiled/dist/components: sbParserError.js
 Only in compiled/dist/components: sbPlaylistCommandsBuilder.js
 Only in compiled/dist/components: sbPlaylistHandlerModule.js
@@ -147,7 +141,6 @@ Only in compiled/dist/jsmodules: sbAddToDevice.jsm
 Only in compiled/dist/jsmodules: sbAddToLibrary.jsm
 Only in compiled/dist/jsmodules: sbAddToPlaylist.jsm
 Only in compiled/dist/jsmodules: SBJobUtils.jsm
-Only in compiled/dist/jsmodules: sbMetadataUtils.jsm
 Only in compiled/dist/jsmodules: ServicePaneHelper.jsm
 Only in compiled/dist: lib
 Only in compiled/dist: nightingale
