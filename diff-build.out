@@ -1,7 +1,7 @@
-Files compiled/app/application.ini and ccompiled/app/application.ini differ
+Only in compiled/app: application.ini
 Only in compiled/app: branding
 Only in compiled/app: content
-Only in compiled/app: preferences
+Only in compiled/app: nightingale.ini
 Only in compiled/app: profile
 Only in compiled/app: skin
 Only in compiled: branding
@@ -90,7 +90,10 @@ Files compiled/dist/components/sbApplicationController.js and ccompiled/dist/com
 Files compiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js and ccompiled/dist/components/sbDeviceFirmwareAutoCheckForUpdate.js differ
 Files compiled/dist/components/sbJobProgressService.js and ccompiled/dist/components/sbJobProgressService.js differ
 Files compiled/dist/components/sbSmartPlaylistPropertyRegistrar.js and ccompiled/dist/components/sbSmartPlaylistPropertyRegistrar.js differ
-Only in compiled/dist: defaults
+Files compiled/dist/defaults/preferences/songbird-channel-prefs.js and ccompiled/dist/defaults/preferences/songbird-channel-prefs.js differ
+Files compiled/dist/defaults/preferences/songbird-prefs.js and ccompiled/dist/defaults/preferences/songbird-prefs.js differ
+Only in compiled/dist/defaults/preferences: songbird-zzz-branding.js
+Only in compiled/dist/defaults: profile
 Only in compiled/dist: extensions
 Only in compiled/dist: gst-plugins
 Only in compiled/dist: gstreamer

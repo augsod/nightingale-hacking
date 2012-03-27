@@ -1,22 +1,23 @@
-macro(SB_DISTRIBUTE)
+macro(SB_DISTRIBUTE outdir)
   # When we start linking more of this together, see if we can just put this
   # all in ${CMAKE_CURRENT_BINARY_DIR}
-  file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/dist)
+  file(MAKE_DIRECTORY ${outdir})
   foreach(src ${ARGN})
     configure_file(
       ${CMAKE_CURRENT_SOURCE_DIR}/${src}
-      ${CMAKE_BINARY_DIR}/dist/${src})
+      ${outdir}/${src})
   endforeach()
 endmacro()
 
-macro(SB_DISTRIBUTE_PREPROCESS)
+macro(SB_DISTRIBUTE_PREPROCESS outdir)
   #TODO: Define these somewhere else
   set(definitions
     -DSB_APPNAME=Nightingale
     -DSB_MILESTONE=1.11.0b2
     -DSB_BUILD_ID=20120314113350
     -DSB_BUILD_NUMBER=2237
-    -DSB_CRASHREPORT_SERVER_URL=https://crashreports.songbirdnest.com/submit)
+    -DSB_CRASHREPORT_SERVER_URL=https://crashreports.songbirdnest.com/submit
+    -DSB_UPDATE_CHANNEL=release)
 
   set(preprocessor ${CMAKE_SOURCE_DIR}/dependencies)
   if(UNIX)
@@ -25,19 +26,12 @@ macro(SB_DISTRIBUTE_PREPROCESS)
   set(preprocessor
     ${preprocessor}/mozilla-1.9.2/release/scripts/preprocessor.pl)
 
-  file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/dist)
+  file(MAKE_DIRECTORY ${outdir})
   foreach(src ${ARGN})
     set(cmd perl ${preprocessor} ${definitions}
       ${CMAKE_CURRENT_SOURCE_DIR}/${src}.in >)
 
-    #TODO: Pick only of these to run, there is no reason to have both
-    #but it is what the old build system does
-
     add_custom_target(${src} ALL
-      COMMAND ${cmd} ${CMAKE_BINARY_DIR}/dist/${src})
-
-    add_custom_target(${src}2 ALL
-      COMMAND ${cmd} ${CMAKE_CURRENT_BINARY_DIR}/${src})
-
+      COMMAND ${cmd} ${outdir}/${src})
   endforeach()
 endmacro()
