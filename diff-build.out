@@ -52,7 +52,7 @@ Only in compiled/dist: searchplugins
 Only in compiled/dist: xulrunner
 Only in compiled: documentation
 Only in ccompiled/extensions/7digital/chrome: 7digital
-Only in compiled/extensions/7digital/chrome: jar.mn
+Files compiled/extensions/7digital/chrome/jar.mn and ccompiled/extensions/7digital/chrome/jar.mn differ
 Only in compiled/extensions/7digital: components
 Only in compiled/extensions/7digital: defaults
 Only in compiled/extensions/7digital: install.rdf
@@ -67,7 +67,7 @@ Only in compiled/extensions/7digital/.xpistage: install.rdf
 Only in compiled/extensions: albumart
 Only in compiled/extensions: AlbumArt
 Only in ccompiled/extensions/albumartlastfm/chrome: albumartlastfm
-Only in compiled/extensions/albumartlastfm/chrome: jar.mn
+Files compiled/extensions/albumartlastfm/chrome/jar.mn and ccompiled/extensions/albumartlastfm/chrome/jar.mn differ
 Only in compiled/extensions/albumartlastfm: components
 Only in compiled/extensions/albumartlastfm: defaults
 Only in compiled/extensions/albumartlastfm: install.rdf
@@ -79,7 +79,7 @@ Only in compiled/extensions/albumartlastfm/.xpistage: components
 Only in compiled/extensions/albumartlastfm/.xpistage: defaults
 Only in compiled/extensions/albumartlastfm/.xpistage: install.rdf
 Only in compiled/extensions: audioscrobbler
-Only in compiled/extensions/concerts/chrome: jar.mn
+Files compiled/extensions/concerts/chrome/jar.mn and ccompiled/extensions/concerts/chrome/jar.mn differ
 Only in compiled/extensions/concerts: components
 Only in compiled/extensions/concerts: defaults
 Only in compiled/extensions/concerts: install.rdf
@@ -93,7 +93,7 @@ Only in compiled/extensions/concerts/.xpistage: LICENSE
 Only in compiled/extensions/concerts/.xpistage: platform
 Only in compiled/extensions: extensionschecker
 Only in ccompiled/extensions/foldersync/chrome: foldersync
-Only in compiled/extensions/foldersync/chrome: jar.mn
+Files compiled/extensions/foldersync/chrome/jar.mn and ccompiled/extensions/foldersync/chrome/jar.mn differ
 Only in compiled/extensions/foldersync: defaults
 Only in compiled/extensions/foldersync: install.rdf
 Only in compiled/extensions/foldersync: tmp

@@ -21,10 +21,15 @@ macro(SB_EXTENSION target)
 
   file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/dist/chrome)
 
-  set(cmd perl ${preprocessor} ${definitions} -- ${CMAKE_CURRENT_SOURCE_DIR}/jar.mn.in | perl ${jar-expander} ${CMAKE_CURRENT_SOURCE_DIR} | perl ${make-jars} -f jar -s ${CMAKE_CURRENT_SOURCE_DIR} -t ${CMAKE_SOURCE_DIR} -j ${CMAKE_BINARY_DIR}/extensions/${target}/.xpistage/chrome -z zip -p ${preprocessor} -v ${definitions})
+  set(cmd perl ${preprocessor} ${definitions} -- ${CMAKE_CURRENT_SOURCE_DIR}/jar.mn.in | perl ${jar-expander} ${CMAKE_CURRENT_SOURCE_DIR} > ${CMAKE_BINARY_DIR}/extensions/${target}/chrome/jar.mn)
+
+  add_custom_target(${target}.manifest ALL
+    COMMAND ${cmd})
+
+  set(cmd2 perl ${make-jars} -f jar -s ${CMAKE_CURRENT_SOURCE_DIR} -t ${CMAKE_SOURCE_DIR} -j ${CMAKE_BINARY_DIR}/extensions/${target}/.xpistage/chrome -z zip -p ${preprocessor} -v ${definitions} < ${CMAKE_BINARY_DIR}/extensions/${target}/chrome/jar.mn)
 
   add_custom_target(${target}.jar ALL
-    COMMAND ${cmd})
+    COMMAND ${cmd2})
 
   add_dependencies(${target}.jar
     ${target}.manifest)
