@@ -27,15 +27,10 @@ Only in compiled/dist/chrome: browser.jar
 Only in compiled/dist/chrome: browser-locale.jar
 Only in compiled/dist/chrome: browser-locale.manifest
 Only in compiled/dist/chrome: browser.manifest
-Only in compiled/dist/chrome: coppery.jar
-Only in compiled/dist/chrome: coppery.manifest
-Only in compiled/dist/chrome: gonzo.jar
-Only in compiled/dist/chrome: gonzo.manifest
+Files compiled/dist/chrome/coppery.jar and ccompiled/dist/chrome/coppery.jar differ
+Files compiled/dist/chrome/gonzo.jar and ccompiled/dist/chrome/gonzo.jar differ
 Only in compiled/dist/chrome: icons
-Only in compiled/dist/chrome: locales.jar
-Only in compiled/dist/chrome: locales.manifest
-Only in compiled/dist/chrome: purplerain.jar
-Only in compiled/dist/chrome: purplerain.manifest
+Files compiled/dist/chrome/purplerain.jar and ccompiled/dist/chrome/purplerain.jar differ
 Files compiled/dist/chrome/songbird.jar and ccompiled/dist/chrome/songbird.jar differ
 Files compiled/dist/chrome/songbird.manifest and ccompiled/dist/chrome/songbird.manifest differ
 Only in compiled/dist/components: fuelApplication.js
@@ -60,9 +55,19 @@ Only in compiled/dist: searchplugins
 Only in compiled/dist: xulrunner
 Only in compiled: documentation
 Only in compiled: extensions
-Only in compiled: feathers
+Only in compiled/feathers/coppery/chrome: content
+Only in ccompiled/feathers/coppery/chrome: coppery
+Files compiled/feathers/coppery/chrome/jar.mn and ccompiled/feathers/coppery/chrome/jar.mn differ
+Only in compiled/feathers/gonzo: chrome
+Only in ccompiled/feathers/gonzo: gonzo
+Files compiled/feathers/gonzo/jar.mn and ccompiled/feathers/gonzo/jar.mn differ
+Only in compiled/feathers/purplerain/chrome: content
+Files compiled/feathers/purplerain/chrome/jar.mn and ccompiled/feathers/purplerain/chrome/jar.mn differ
+Only in ccompiled/feathers/purplerain/chrome: purplerain
 Only in compiled: installer
-Only in compiled: locales
+Only in compiled/locales: branding
+Only in compiled/locales: en-US
+Only in ccompiled/locales: locales
 Only in compiled: tools
 Only in compiled: update
 Only in compiled: xpi-stage
