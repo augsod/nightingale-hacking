@@ -7,7 +7,6 @@ Only in compiled/app: skin
 Only in compiled: build
 Only in compiled/components/dataremote/src: jar.mn
 Only in compiled/components/devices: content
-Only in compiled/components/devices/manager: public
 Only in compiled/components/intl/src: content
 Only in compiled/components/library/localdatabase: content
 Only in compiled/components/library/localdatabase: perf
@@ -27,10 +26,13 @@ Files compiled/dist/application.ini and ccompiled/dist/application.ini differ
 Only in compiled/dist: chrome
 Only in compiled/dist/components: fuelApplication.js
 Only in compiled/dist/components: gst_libs.txt
-Only in compiled/dist/components: httpd.js
 Only in compiled/dist/components: nsBrowserGlue.js
 Only in compiled/dist/components: nsSidebar.js
+Only in ccompiled/dist/components: sbMediaItemControllerTest.js
+Only in ccompiled/dist/components: sbTestDisplayPaneProvider.js
+Only in ccompiled/dist/components: sbTestHarness.js
 Files compiled/dist/defaults/preferences/songbird-prefs.js and ccompiled/dist/defaults/preferences/songbird-prefs.js differ
+Files compiled/dist/defaults/preferences/songbird-zzz-branding.js and ccompiled/dist/defaults/preferences/songbird-zzz-branding.js differ
 Only in compiled/dist/defaults: profile
 Only in compiled/dist: extensions
 Only in compiled/dist: gst-plugins
@@ -41,7 +43,6 @@ Only in compiled/dist: nightingale-bin
 Only in compiled/dist: plugins
 Only in compiled/dist: scripts
 Only in compiled/dist: searchplugins
-Only in compiled/dist: timingServiceLog.txt
 Only in compiled/dist: xulrunner
 Only in compiled: documentation
 Only in compiled: extensions
