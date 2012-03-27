@@ -31,11 +31,14 @@ macro(SB_JAR_MANIFEST_PREPROCESS target)
 
   set(cmd perl ${preprocessor} ${definitions} -- ${CMAKE_CURRENT_SOURCE_DIR}/jar.mn.in | perl ${jar-expander} ${CMAKE_CURRENT_SOURCE_DIR} > ${CMAKE_CURRENT_BINARY_DIR}/jar.mn)
 
-  add_custom_target(${target}..manifest ALL
+  add_custom_target(${target}.manifest ALL
     COMMAND ${cmd})
 
-  set(cmd perl ${make-jars} -v -s ${CMAKE_CURRENT_SOURCE_DIR} -t ${CMAKE_SOURCE_DIR} -j ${CMAKE_BINARY_DIR}/dist/chrome -z zip -p ${preprocessor} -- ${definitions} < ${CMAKE_CURRENT_BINARY_DIR}/jar.mn)
+  set(cmd2 perl ${make-jars} -s ${CMAKE_CURRENT_SOURCE_DIR} -t ${CMAKE_SOURCE_DIR} -j ${CMAKE_BINARY_DIR}/dist/chrome -z zip -p ${preprocessor} -v ${definitions} -- < ${CMAKE_CURRENT_BINARY_DIR}/jar.mn)
 
   add_custom_target(${target}.jar ALL
-    COMMAND ${cmd})
+    COMMAND ${cmd2})
+
+  add_dependencies(${target}.jar
+    ${target}.manifest)
 endmacro()
