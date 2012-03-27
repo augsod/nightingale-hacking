@@ -1,5 +1,5 @@
 Only in compiled/app: application.ini
-Only in compiled/app: branding
+Only in ccompiled/app/branding: songbird
 Only in compiled/app: content
 Only in compiled/app: nightingale.ini
 Only in compiled/app: profile
@@ -23,7 +23,21 @@ Only in compiled/components/property/src: sbProperties.jsm
 Only in compiled/components/search: public
 Only in compiled/components/servicepane: public
 Files compiled/dist/application.ini and ccompiled/dist/application.ini differ
-Only in compiled/dist: chrome
+Only in compiled/dist/chrome: browser.jar
+Only in compiled/dist/chrome: browser-locale.jar
+Only in compiled/dist/chrome: browser-locale.manifest
+Only in compiled/dist/chrome: browser.manifest
+Only in compiled/dist/chrome: coppery.jar
+Only in compiled/dist/chrome: coppery.manifest
+Only in compiled/dist/chrome: gonzo.jar
+Only in compiled/dist/chrome: gonzo.manifest
+Only in compiled/dist/chrome: icons
+Only in compiled/dist/chrome: locales.jar
+Only in compiled/dist/chrome: locales.manifest
+Only in compiled/dist/chrome: purplerain.jar
+Only in compiled/dist/chrome: purplerain.manifest
+Files compiled/dist/chrome/songbird.jar and ccompiled/dist/chrome/songbird.jar differ
+Files compiled/dist/chrome/songbird.manifest and ccompiled/dist/chrome/songbird.manifest differ
 Only in compiled/dist/components: fuelApplication.js
 Only in compiled/dist/components: gst_libs.txt
 Only in compiled/dist/components: nsBrowserGlue.js

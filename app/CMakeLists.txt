@@ -1,5 +1,6 @@
 include(SbDistribute)
 
+add_subdirectory(branding)
 add_subdirectory(preferences)
 
 sb_distribute(${CMAKE_BINARY_DIR}/dist
