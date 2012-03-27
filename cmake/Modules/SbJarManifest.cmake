@@ -34,7 +34,7 @@ macro(SB_JAR_MANIFEST_PREPROCESS target)
   add_custom_target(${target}.manifest ALL
     COMMAND ${cmd})
 
-  set(cmd2 perl ${make-jars} -s ${CMAKE_CURRENT_SOURCE_DIR} -t ${CMAKE_SOURCE_DIR} -j ${CMAKE_BINARY_DIR}/dist/chrome -z zip -p ${preprocessor} -v ${definitions} -- < ${CMAKE_CURRENT_BINARY_DIR}/jar.mn)
+  set(cmd2 perl ${make-jars} -f jar -s ${CMAKE_CURRENT_SOURCE_DIR} -t ${CMAKE_SOURCE_DIR} -j ${CMAKE_BINARY_DIR}/dist/chrome -z zip -p ${preprocessor} -v ${definitions} -- < ${CMAKE_CURRENT_BINARY_DIR}/jar.mn)
 
   add_custom_target(${target}.jar ALL
     COMMAND ${cmd2})

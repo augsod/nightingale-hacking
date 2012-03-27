@@ -27,10 +27,7 @@ Only in compiled/dist/chrome: browser.jar
 Only in compiled/dist/chrome: browser-locale.jar
 Only in compiled/dist/chrome: browser-locale.manifest
 Only in compiled/dist/chrome: browser.manifest
-Files compiled/dist/chrome/coppery.jar and ccompiled/dist/chrome/coppery.jar differ
-Files compiled/dist/chrome/gonzo.jar and ccompiled/dist/chrome/gonzo.jar differ
 Only in compiled/dist/chrome: icons
-Files compiled/dist/chrome/purplerain.jar and ccompiled/dist/chrome/purplerain.jar differ
 Files compiled/dist/chrome/songbird.jar and ccompiled/dist/chrome/songbird.jar differ
 Files compiled/dist/chrome/songbird.manifest and ccompiled/dist/chrome/songbird.manifest differ
 Only in compiled/dist/components: fuelApplication.js
@@ -57,12 +54,9 @@ Only in compiled: documentation
 Only in compiled: extensions
 Only in compiled/feathers/coppery/chrome: content
 Only in ccompiled/feathers/coppery/chrome: coppery
-Files compiled/feathers/coppery/chrome/jar.mn and ccompiled/feathers/coppery/chrome/jar.mn differ
 Only in compiled/feathers/gonzo: chrome
 Only in ccompiled/feathers/gonzo: gonzo
-Files compiled/feathers/gonzo/jar.mn and ccompiled/feathers/gonzo/jar.mn differ
 Only in compiled/feathers/purplerain/chrome: content
-Files compiled/feathers/purplerain/chrome/jar.mn and ccompiled/feathers/purplerain/chrome/jar.mn differ
 Only in ccompiled/feathers/purplerain/chrome: purplerain
 Only in compiled: installer
 Only in compiled/locales: branding
