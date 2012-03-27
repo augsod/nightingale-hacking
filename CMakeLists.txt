@@ -10,4 +10,5 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
 add_subdirectory(app)
 add_subdirectory(bindings)
+add_subdirectory(branding)
 add_subdirectory(components)

@@ -14,10 +14,10 @@ macro(SB_DISTRIBUTE_PREPROCESS outdir)
   set(definitions
     -DSB_APPNAME=Nightingale
     -DSB_MILESTONE=1.11.0b2
-    -DSB_BUILD_ID=20120314113350
-    -DSB_BUILD_NUMBER=2237
+    -DSB_BUILD_ID=20120324204931
+    -DSB_BUILD_NUMBER=0
     -DSB_CRASHREPORT_SERVER_URL=https://crashreports.songbirdnest.com/submit
-    -DSB_UPDATE_CHANNEL=release)
+    -DSB_UPDATE_CHANNEL=default)
 
   set(preprocessor ${CMAKE_SOURCE_DIR}/dependencies)
   if(UNIX)
