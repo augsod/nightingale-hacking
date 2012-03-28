@@ -12,12 +12,27 @@ endmacro()
 macro(SB_DISTRIBUTE_PREPROCESS outdir)
   #TODO: Define these somewhere else
   set(definitions
-    -DSB_APPNAME=Nightingale
-    -DSB_MILESTONE=1.11.0b2
-    -DSB_BUILD_ID=20120324204931
-    -DSB_BUILD_NUMBER=0
+    -DPACKAGE_NAME=""
+    -DPACKAGE_TARNAME=""
+    -DPACKAGE_VERSION=""
+    -DPACKAGE_STRING=""
+    -DPACKAGE_BUGREPORT=""
+    -DPACKAGE_URL=""
+    -DNDEBUG=1
+    -DXP_UNIX=1
+    -D_REENTRANT=1
+    -DSB_PLATFORM="linux"
+    -DSB_APPNAME="Nightingale"
+    -DSB_BRANCHNAME="Songbird1.11"
+    -DSB_BUILD_ID="20120327002039"
+    -DSB_BUILD_NUMBER="0"
+    -DSB_MILESTONE="1.11.0b2"
+    -DSB_MILESTONE_WINDOWS="1.10.99.2"
+    -DSB_PROFILE_VERSION="2"
+    -DSB_MOZILLA_VERSION="1.9.2.3"
+    -DSB_UPDATE_CHANNEL="default"
     -DSB_CRASHREPORT_SERVER_URL=https://crashreports.songbirdnest.com/submit
-    -DSB_UPDATE_CHANNEL=default)
+    -DMEDIA_CORE_GST_SYSTEM=1)
 
   set(preprocessor ${CMAKE_SOURCE_DIR}/dependencies)
   if(UNIX)

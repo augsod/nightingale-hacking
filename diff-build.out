@@ -40,6 +40,7 @@ Files compiled/dist/chrome/gonzo.jar and ccompiled/dist/chrome/gonzo.jar differ
 Only in compiled/dist/chrome: icons
 Files compiled/dist/chrome/purplerain.jar and ccompiled/dist/chrome/purplerain.jar differ
 Files compiled/dist/chrome/songbird.jar and ccompiled/dist/chrome/songbird.jar differ
+Files compiled/dist/chrome/songbird.manifest and ccompiled/dist/chrome/songbird.manifest differ
 Only in ccompiled/dist/chrome: stage
 Only in compiled/dist/components: fuelApplication.js
 Only in compiled/dist/components: gst_libs.txt
@@ -48,8 +49,6 @@ Only in compiled/dist/components: nsSidebar.js
 Only in ccompiled/dist/components: sbMediaItemControllerTest.js
 Only in ccompiled/dist/components: sbTestDisplayPaneProvider.js
 Only in ccompiled/dist/components: sbTestHarness.js
-Files compiled/dist/defaults/preferences/songbird-prefs.js and ccompiled/dist/defaults/preferences/songbird-prefs.js differ
-Files compiled/dist/defaults/preferences/songbird-zzz-branding.js and ccompiled/dist/defaults/preferences/songbird-zzz-branding.js differ
 Only in compiled/dist/defaults: profile
 Only in compiled/dist: extensions
 Only in compiled/dist: gst-plugins
