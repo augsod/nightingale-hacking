@@ -1,3 +1,5 @@
 include(SbJarManifest)
 
-sb_jar_manifest_preprocess(gonzo)
+project(feathers.gonzo)
+
+sb_jar_manifest()

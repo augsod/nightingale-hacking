@@ -1,3 +1,5 @@
 include(SbJarManifest)
 
-sb_jar_manifest_preprocess(purplerain)
+project(feathers.purplerain)
+
+sb_jar_manifest()

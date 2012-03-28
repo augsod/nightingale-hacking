@@ -1,3 +1,5 @@
 include(SbJarManifest)
 
-sb_jar_manifest_preprocess(songbird)
+project(app.branding)
+
+sb_jar_manifest()

@@ -1,3 +1,5 @@
 include(SbJarManifest)
 
-sb_jar_manifest_preprocess(substitution)
+project(locales)
+
+sb_jar_manifest()

@@ -26,7 +26,10 @@ Only in compiled/dist/chrome: browser.jar
 Only in compiled/dist/chrome: browser-locale.jar
 Only in compiled/dist/chrome: browser-locale.manifest
 Only in compiled/dist/chrome: browser.manifest
+Files compiled/dist/chrome/coppery.jar and ccompiled/dist/chrome/coppery.jar differ
+Files compiled/dist/chrome/gonzo.jar and ccompiled/dist/chrome/gonzo.jar differ
 Only in compiled/dist/chrome: icons
+Files compiled/dist/chrome/purplerain.jar and ccompiled/dist/chrome/purplerain.jar differ
 Files compiled/dist/chrome/songbird.jar and ccompiled/dist/chrome/songbird.jar differ
 Files compiled/dist/chrome/songbird.manifest and ccompiled/dist/chrome/songbird.manifest differ
 Only in ccompiled/dist/chrome: stage

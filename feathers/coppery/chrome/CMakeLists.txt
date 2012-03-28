@@ -1,3 +1,5 @@
 include(SbJarManifest)
 
-sb_jar_manifest_preprocess(coppery)
+project(feathers.coppery)
+
+sb_jar_manifest()
