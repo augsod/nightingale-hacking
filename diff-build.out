@@ -13,7 +13,6 @@ Files compiled/app/skin/dialogs/jar.mn and ccompiled/app/skin/dialogs/jar.mn dif
 Files compiled/app/skin/global/jar.mn and ccompiled/app/skin/global/jar.mn differ
 Files compiled/app/skin/mozapps/jar.mn and ccompiled/app/skin/mozapps/jar.mn differ
 Only in compiled: build
-Only in compiled/components/dataremote/src: jar.mn
 Only in compiled/components/devices: content
 Only in compiled/components/intl/src: content
 Only in compiled/components/library/localdatabase: content

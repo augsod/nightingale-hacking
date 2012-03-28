@@ -1,7 +1,10 @@
 include(SbLibrary)
+include(SbJarManifest)
 include(SbJSComponent)
 
 project(sbDataRemote)
+
+sb_jar_manifest()
 
 sb_js_component(
   sbDataRemote.js)
