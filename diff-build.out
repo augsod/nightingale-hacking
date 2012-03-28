@@ -1,8 +1,17 @@
 Only in compiled/app: application.ini
-Only in compiled/app: content
+Files compiled/app/content/bindings/jar.mn and ccompiled/app/content/bindings/jar.mn differ
+Only in compiled/app/content/html: about.html
+Only in compiled/app/content/html: eula.html
+Files compiled/app/content/mediapages/jar.mn and ccompiled/app/content/mediapages/jar.mn differ
+Files compiled/app/content/scripts/jar.mn and ccompiled/app/content/scripts/jar.mn differ
+Files compiled/app/content/xul/jar.mn and ccompiled/app/content/xul/jar.mn differ
 Only in compiled/app: nightingale.ini
 Only in compiled/app: profile
-Only in compiled/app: skin
+Files compiled/app/skin/bindings/jar.mn and ccompiled/app/skin/bindings/jar.mn differ
+Files compiled/app/skin/branding/jar.mn and ccompiled/app/skin/branding/jar.mn differ
+Files compiled/app/skin/dialogs/jar.mn and ccompiled/app/skin/dialogs/jar.mn differ
+Files compiled/app/skin/global/jar.mn and ccompiled/app/skin/global/jar.mn differ
+Files compiled/app/skin/mozapps/jar.mn and ccompiled/app/skin/mozapps/jar.mn differ
 Only in compiled: build
 Only in compiled/components/dataremote/src: jar.mn
 Only in compiled/components/devices: content

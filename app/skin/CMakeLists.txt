@@ -1,0 +1,5 @@
+add_subdirectory(bindings)
+add_subdirectory(branding)
+add_subdirectory(dialogs)
+add_subdirectory(global)
+add_subdirectory(mozapps)

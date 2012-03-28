@@ -1,0 +1,5 @@
+add_subdirectory(bindings)
+#add_subdirectory(html)
+add_subdirectory(mediapages)
+add_subdirectory(scripts)
+add_subdirectory(xul)

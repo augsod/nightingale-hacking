@@ -1,7 +1,9 @@
 include(SbDistribute)
 
 add_subdirectory(branding)
+add_subdirectory(content)
 add_subdirectory(preferences)
+add_subdirectory(skin)
 
 sb_distribute(${CMAKE_BINARY_DIR}/dist
   blocklist.xml
