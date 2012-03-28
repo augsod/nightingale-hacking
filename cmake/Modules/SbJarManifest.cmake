@@ -118,7 +118,8 @@ macro(SB_JAR_MANIFEST)
   add_custom_target(${PROJECT_NAME}.manifest ALL
     COMMAND ${cmd})
 
-  set(cmd2 perl -I${mozdep} ${make-jars} ${_MAKE_JARS_FLAGS} --
+  set(cmd2 perl -I${mozdep} -I${CMAKE_CURRENT_BINARY_DIR}
+    ${make-jars} ${_MAKE_JARS_FLAGS} --
     ${_PPDEFINES} ${definitions} < ${_JAR_MN})
 
   add_custom_target(${PROJECT_NAME}.jar ALL

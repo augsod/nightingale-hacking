@@ -31,7 +31,7 @@ macro(SB_DISTRIBUTE_PREPROCESS outdir)
     set(cmd perl ${preprocessor} ${definitions}
       ${CMAKE_CURRENT_SOURCE_DIR}/${src}.in >)
 
-    add_custom_target(${src} ALL
+    add_custom_target(${PROJECT_NAME}.${src} ALL
       COMMAND ${cmd} ${outdir}/${src})
   endforeach()
 endmacro()

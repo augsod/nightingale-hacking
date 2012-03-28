@@ -40,7 +40,6 @@ Files compiled/dist/chrome/gonzo.jar and ccompiled/dist/chrome/gonzo.jar differ
 Only in compiled/dist/chrome: icons
 Files compiled/dist/chrome/purplerain.jar and ccompiled/dist/chrome/purplerain.jar differ
 Files compiled/dist/chrome/songbird.jar and ccompiled/dist/chrome/songbird.jar differ
-Files compiled/dist/chrome/songbird.manifest and ccompiled/dist/chrome/songbird.manifest differ
 Only in ccompiled/dist/chrome: stage
 Only in compiled/dist/components: fuelApplication.js
 Only in compiled/dist/components: gst_libs.txt
