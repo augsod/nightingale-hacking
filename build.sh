@@ -26,9 +26,9 @@ done
 # and locate in order of preference
 # python2.x python2.x python2 pyton
 set +e
-PYTHON="$(which python2)"
+_PYTHON="$(which python2)"
 if [[ $? == 0 ]]; then
- export PYTHON=PYTHON
+ export PYTHON=$_PYTHON
 else
  export PYTHON="$(which python)"
 fi

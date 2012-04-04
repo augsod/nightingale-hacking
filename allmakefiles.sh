@@ -99,24 +99,6 @@ build/autodefs.mk
 build/Makefile
 "
 
-MAKEFILES_dependencies="
-dependencies/Makefile
-dependencies/vendor/mozbrowser/Makefile
-dependencies/vendor/mozbrowser/components/preferences/Makefile
-dependencies/vendor/mozbrowser/fuel/Makefile
-dependencies/vendor/mozbrowser/fuel/public/Makefile
-dependencies/vendor/mozbrowser/fuel/src/Makefile
-dependencies/vendor/mozbrowser/locales/Makefile
-dependencies/vendor/mozbrowser/themes/Makefile
-dependencies/vendor/mozbrowser/themes/pinstripe/browser/Makefile
-dependencies/vendor/mozbrowser/themes/winstripe/browser/Makefile
-dependencies/vendor/mozbrowser/components/search/Makefile
-dependencies/vendor/mozbrowser/components/sidebar/src/Makefile
-dependencies/vendor/mozbrowser/components/Makefile
-dependencies/vendor/mozbrowser/base/Makefile
-"
-
-
 #
 # Put it all together
 #
@@ -125,6 +107,5 @@ add_makefiles "
 $MAKEFILES_auto
 $MAKEFILES_app
 $MAKEFILES_build
-$MAKEFILES_dependencies
 "
 

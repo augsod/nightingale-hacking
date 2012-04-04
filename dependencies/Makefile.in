@@ -29,8 +29,6 @@ VPATH = @srcdir@
 
 include $(DEPTH)/build/autodefs.mk
 
-SUBDIRS = vendor/mozbrowser
-
 ifeq (,$(filter-out linux solaris,$(SB_PLATFORM)))
    SONGBIRD_XR_STUB = $(SONGBIRD_XULRUNNERDIR)/songbird-bin
 else
