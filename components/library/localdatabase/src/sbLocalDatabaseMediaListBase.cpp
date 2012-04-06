@@ -75,7 +75,7 @@ NS_IMPL_ISUPPORTS_INHERITED1(sbLocalDatabaseMediaListBase,
                              sbIMediaList)
 
 sbLocalDatabaseMediaListBase::sbLocalDatabaseMediaListBase()
-: mFullArrayMonitor(nsnull),
+: mFullArrayMonitor("sbLocalDatabaseMediaListBase::mFullArrayMonitor"),
   mListContentType(sbIMediaList::CONTENTTYPE_NONE),
   mLockedEnumerationActive(PR_FALSE)
 {
@@ -83,9 +83,6 @@ sbLocalDatabaseMediaListBase::sbLocalDatabaseMediaListBase()
 
 sbLocalDatabaseMediaListBase::~sbLocalDatabaseMediaListBase()
 {
-  if (mFullArrayMonitor) {
-    nsAutoMonitor::DestroyMonitor(mFullArrayMonitor);
-  }
 }
 
 nsresult
@@ -93,10 +90,6 @@ sbLocalDatabaseMediaListBase::Init(sbLocalDatabaseLibrary* aLibrary,
                                    const nsAString& aGuid,
                                    PRBool aOwnsLibrary)
 {
-  mFullArrayMonitor =
-    nsAutoMonitor::NewMonitor("sbLocalDatabaseMediaListBase::mFullArrayMonitor");
-  NS_ENSURE_TRUE(mFullArrayMonitor, NS_ERROR_OUT_OF_MEMORY);
-
   // Initialize our base classes
   nsresult rv = sbLocalDatabaseMediaListListener::Init();
   NS_ENSURE_SUCCESS(rv, rv);
@@ -671,7 +664,7 @@ sbLocalDatabaseMediaListBase::GetLength(PRUint32* aLength)
   NS_ENSURE_ARG_POINTER(aLength);
 
   NS_ENSURE_TRUE(mFullArrayMonitor, NS_ERROR_FAILURE);
-  nsAutoMonitor mon(mFullArrayMonitor);
+  mozilla::MonitorAutoLock mon(mFullArrayMonitor);
 
   nsresult rv = mFullArray->GetLength(aLength);
   NS_ENSURE_SUCCESS(rv, rv);
@@ -704,7 +697,7 @@ sbLocalDatabaseMediaListBase::GetItemByIndex(PRUint32 aIndex,
   nsAutoString guid;
   {
     NS_ENSURE_TRUE(mFullArrayMonitor, NS_ERROR_FAILURE);
-    nsAutoMonitor mon(mFullArrayMonitor);
+    mozilla::MonitorAutoLock mon(mFullArrayMonitor);
 
     rv = mFullArray->GetGuidByIndex(aIndex, guid);
     NS_ENSURE_SUCCESS(rv, rv);
@@ -797,7 +790,7 @@ sbLocalDatabaseMediaListBase::EnumerateAllItems(sbIMediaListEnumerationListener*
 
     case sbIMediaList::ENUMERATIONTYPE_LOCKING: {
       NS_ENSURE_TRUE(mFullArrayMonitor, NS_ERROR_FAILURE);
-      nsAutoMonitor mon(mFullArrayMonitor);
+      mozilla::MonitorAutoLock mon(mFullArrayMonitor);
 
       // Don't reenter!
       NS_ENSURE_FALSE(mLockedEnumerationActive, NS_ERROR_FAILURE);
@@ -888,7 +881,7 @@ sbLocalDatabaseMediaListBase::EnumerateItemsByProperty(const nsAString& aID,
 
     case sbIMediaList::ENUMERATIONTYPE_LOCKING: {
       NS_ENSURE_TRUE(mFullArrayMonitor, NS_ERROR_FAILURE);
-      nsAutoMonitor mon(mFullArrayMonitor);
+      mozilla::MonitorAutoLock mon(mFullArrayMonitor);
 
       // Don't reenter!
       NS_ENSURE_FALSE(mLockedEnumerationActive, NS_ERROR_FAILURE);
@@ -1029,7 +1022,7 @@ sbLocalDatabaseMediaListBase::EnumerateItemsByProperties(sbIPropertyArray* aProp
 
     case sbIMediaList::ENUMERATIONTYPE_LOCKING: {
       NS_ENSURE_TRUE(mFullArrayMonitor, NS_ERROR_FAILURE);
-      nsAutoMonitor mon(mFullArrayMonitor);
+      mozilla::MonitorAutoLock mon(mFullArrayMonitor);
 
       // Don't reenter!
       NS_ENSURE_FALSE(mLockedEnumerationActive, NS_ERROR_FAILURE);
@@ -1162,7 +1155,7 @@ sbLocalDatabaseMediaListBase::IndexOf(sbIMediaItem* aMediaItem,
   PRUint32 count;
 
   NS_ENSURE_TRUE(mFullArrayMonitor, NS_ERROR_FAILURE);
-  nsAutoMonitor mon(mFullArrayMonitor);
+  mozilla::MonitorAutoLock mon(mFullArrayMonitor);
 
   nsresult rv = mFullArray->GetLength(&count);
   NS_ENSURE_SUCCESS(rv, rv);
@@ -1198,7 +1191,7 @@ sbLocalDatabaseMediaListBase::LastIndexOf(sbIMediaItem* aMediaItem,
   NS_ENSURE_ARG_POINTER(_retval);
 
   NS_ENSURE_TRUE(mFullArrayMonitor, NS_ERROR_FAILURE);
-  nsAutoMonitor mon(mFullArrayMonitor);
+  mozilla::MonitorAutoLock mon(mFullArrayMonitor);
 
   PRUint32 count;
   nsresult rv = mFullArray->GetLength(&count);
@@ -1238,7 +1231,7 @@ sbLocalDatabaseMediaListBase::GetIsEmpty(PRBool* aIsEmpty)
   NS_ENSURE_ARG_POINTER(aIsEmpty);
 
   NS_ENSURE_TRUE(mFullArrayMonitor, NS_ERROR_FAILURE);
-  nsAutoMonitor mon(mFullArrayMonitor);
+  mozilla::MonitorAutoLock mon(mFullArrayMonitor);
 
   PRUint32 length;
   nsresult rv = mFullArray->GetLength(&length);

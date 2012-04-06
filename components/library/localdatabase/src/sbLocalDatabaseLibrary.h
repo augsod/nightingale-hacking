@@ -35,7 +35,6 @@
 #include "sbLocalDatabaseMediaListBase.h"
 #include <sbProxiedComponentManager.h>
 
-#include <prmon.h>
 #include <nsClassHashtable.h>
 #include <nsDataHashtable.h>
 #include <nsCOMArray.h>
@@ -50,6 +49,7 @@
 #include <nsIURI.h>
 #include <nsStringGlue.h>
 #include <nsVoidArray.h>
+#include <mozilla/Monitor.h>
 #include <sbIMediaListFactory.h>
 #include <sbILibraryStatistics.h>
 
@@ -430,7 +430,7 @@ private:
   PRBool mPreventAddedNotification;
 
   // This monitor protects calls to GetMediaItem.
-  PRMonitor *mMonitor;
+  mozilla::Monitor mMonitor;
 
   // Hashtable that holds all the copy listeners.
   nsInterfaceHashtableMT<nsISupportsHashKey,

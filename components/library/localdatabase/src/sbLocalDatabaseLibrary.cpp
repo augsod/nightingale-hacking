@@ -539,7 +539,7 @@ NS_IMPL_CI_INTERFACE_GETTER8(sbLocalDatabaseLibrary,
 sbLocalDatabaseLibrary::sbLocalDatabaseLibrary()
 : mAnalyzeCountLimit(DEFAULT_ANALYZE_COUNT_LIMIT),
   mPreventAddedNotification(PR_FALSE),
-  mMonitor(nsnull)
+  mMonitor("sbLocalDatabaseLibrary::mMonitor")
 {
 #ifdef PR_LOGGING
   if (!gLibraryLog) {
@@ -552,9 +552,6 @@ sbLocalDatabaseLibrary::sbLocalDatabaseLibrary()
 sbLocalDatabaseLibrary::~sbLocalDatabaseLibrary()
 {
   TRACE(("LocalDatabaseLibrary[0x%.8x] - Destructed", this));
-  if(mMonitor) {
-    nsAutoMonitor::DestroyMonitor(mMonitor);
-  }
 }
 
 nsresult
@@ -718,9 +715,6 @@ sbLocalDatabaseLibrary::Init(const nsAString& aDatabaseGuid,
                                     SB_LIBRARY_MANAGER_SHUTDOWN_TOPIC,
                                     PR_FALSE);
   NS_ENSURE_SUCCESS(rv, rv);
-
-  mMonitor = nsAutoMonitor::NewMonitor("sbLocalDatabaseLibrary::mMonitor");
-  NS_ENSURE_TRUE(mMonitor, NS_ERROR_OUT_OF_MEMORY);
 
   // Library initialized, ensure others can get notifications
   nsCOMPtr<sbILocalDatabaseMediaItem> item =
@@ -1874,8 +1868,7 @@ sbLocalDatabaseLibrary::FilterExistingItems
                        NS_ERROR_OUT_OF_MEMORY);
       }
 
-      PRBool success = filteredURIs->AppendElement(uriSpec);
-      NS_ENSURE_TRUE(success, NS_ERROR_OUT_OF_MEMORY);
+      filteredURIs->AppendElement(uriSpec);
 
       if (aPropertyArrayArray && filteredPropertyArrayArray) {
         nsCOMPtr<sbIPropertyArray> properties =
@@ -2782,8 +2775,7 @@ sbLocalDatabaseLibrary::CreateMediaItemInternal(nsIURI* aUri,
   // item with this uri.  If so, return it.
   if (!aAllowDuplicates) {
     nsAutoPtr<nsTArray<nsString>> strArray(new nsTArray<nsString>());
-    PRBool success = strArray->AppendElement(NS_ConvertUTF8toUTF16(spec));
-    NS_ENSURE_SUCCESS(success, NS_ERROR_OUT_OF_MEMORY);
+    strArray->AppendElement(NS_ConvertUTF8toUTF16(spec));
 
     nsAutoPtr<nsTArray<nsString>> filtered;
 
@@ -3069,7 +3061,7 @@ sbLocalDatabaseLibrary::GetMediaItem(const nsAString& aGUID,
          NS_LossyConvertUTF16toASCII(aGUID).get()));
   NS_ENSURE_ARG_POINTER(_retval);
 
-  nsAutoMonitor mon(mMonitor);
+  mozilla::MonitorAutoLock mon(mMonitor);
 
   nsresult rv;
   nsCOMPtr<sbIMediaItem> strongMediaItem;
