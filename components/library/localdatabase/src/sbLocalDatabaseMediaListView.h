@@ -153,7 +153,7 @@ private:
    */
   nsresult HasCommonProperty(sbIPropertyArray* aBag1,
                              sbIPropertyArray* aBag2,
-                             nsStringArray * aPropertiesToIgnore,
+                             nsTArray<nsString>* aPropertiesToIgnore,
                              PRBool* aHasCommonProperty);
 
   nsresult HasCommonProperty(sbIPropertyArray* aBag,
@@ -229,7 +229,7 @@ private:
    * This holds the list of properties that should be ignored when considering
    * whether to invalidate the view.
    */
-  nsStringArray mIgnoreSystemProperties;
+  nsTArray<nsString> mIgnoreSystemProperties;
 };
 
 class sbMakeSortableStringEnumerator : public nsIStringEnumerator
