@@ -370,18 +370,18 @@ NS_IMPL_CI_INTERFACE_GETTER8(sbLocalDatabaseSmartMediaList,
                              nsIObserver);
 
 sbLocalDatabaseSmartMediaList::sbLocalDatabaseSmartMediaList()
-: mInnerMonitor(nsnull)
-, mConditionsMonitor(nsnull)
-, mMatchType(sbILocalDatabaseSmartMediaList::MATCH_TYPE_ANY)
-, mLimitType(sbILocalDatabaseSmartMediaList::LIMIT_TYPE_NONE)
-, mLimit(0)
-, mSelectDirection(PR_TRUE)
-, mRandomSelection(PR_FALSE)
-, mAutoUpdateMonitor(nsnull)
-, mAutoUpdate(false)
-, mNotExistsMode(sbILocalDatabaseSmartMediaList::NOTEXISTS_ASZERO)
-, mListenersMonitor(nsnull)
-, mSourceMonitor(nsnull)
+  : mInnerMonitor("sbLocalDatabaseSmartMediaList::mInnerMonitor")
+  , mConditionsMonitor("sbLocalDatabaseSmartMediaList::mConditionsMonitor")
+  , mMatchType(sbILocalDatabaseSmartMediaList::MATCH_TYPE_ANY)
+  , mLimitType(sbILocalDatabaseSmartMediaList::LIMIT_TYPE_NONE)
+  , mLimit(0)
+  , mSelectDirection(PR_TRUE)
+  , mRandomSelection(PR_FALSE)
+  , mAutoUpdateMonitor("sbLocalDatabaseSmartMediaList::mAutoUpdateMonitor")
+  , mAutoUpdate(false)
+  , mNotExistsMode(sbILocalDatabaseSmartMediaList::NOTEXISTS_ASZERO)
+  , mListenersMonitor("sbLocalDatabaseSmartMediaList::mListenersMonitor")
+  , mSourceMonitor("sbLocalDatabaseSmartMediaList::mSourceMonitor")
 {
 #ifdef PR_LOGGING
   if (!gLocalDatabaseSmartMediaListLog) {
@@ -393,22 +393,6 @@ sbLocalDatabaseSmartMediaList::sbLocalDatabaseSmartMediaList()
 
 sbLocalDatabaseSmartMediaList::~sbLocalDatabaseSmartMediaList()
 {
-  if(mInnerMonitor) {
-    nsAutoMonitor::DestroyMonitor(mInnerMonitor);
-  }
-  if(mConditionsMonitor) {
-    nsAutoMonitor::DestroyMonitor(mConditionsMonitor);
-  }
-  if(mAutoUpdateMonitor) {
-    nsAutoMonitor::DestroyMonitor(mAutoUpdateMonitor);
-  }
-  if (mListenersMonitor) {
-    nsAutoMonitor::DestroyMonitor(mListenersMonitor);
-  }
-  if (mSourceMonitor) {
-    nsAutoMonitor::DestroyMonitor(mSourceMonitor);
-  }
-
   if (mItem) {
     /* use a single-iteration loop to allow breaking out easier */
     nsCOMPtr<sbILibrary> library;
@@ -477,21 +461,6 @@ nsresult
 sbLocalDatabaseSmartMediaList::Init(sbIMediaItem *aItem)
 {
   NS_ENSURE_ARG_POINTER(aItem);
-
-  mInnerMonitor = nsAutoMonitor::NewMonitor("sbLocalDatabaseSmartMediaList::mInnerMonitor");
-  NS_ENSURE_TRUE(mInnerMonitor, NS_ERROR_OUT_OF_MEMORY);
-
-  mConditionsMonitor = nsAutoMonitor::NewMonitor("sbLocalDatabaseSmartMediaList::mConditionsMonitor");
-  NS_ENSURE_TRUE(mConditionsMonitor, NS_ERROR_OUT_OF_MEMORY);
-
-  mAutoUpdateMonitor = nsAutoMonitor::NewMonitor("sbLocalDatabaseSmartMediaList::mAutoUpdateMonitor");
-  NS_ENSURE_TRUE(mAutoUpdateMonitor, NS_ERROR_OUT_OF_MEMORY);
-
-  mListenersMonitor = nsAutoMonitor::NewMonitor("sbLocalDatabaseSmartMediaList::mListenersMonitor");
-  NS_ENSURE_TRUE(mListenersMonitor, NS_ERROR_OUT_OF_MEMORY);
-
-  mSourceMonitor = nsAutoMonitor::NewMonitor("sbLocalDatabaseSmartMediaList::mSourceMonitor");
-  NS_ENSURE_TRUE(mSourceMonitor, NS_ERROR_OUT_OF_MEMORY);
 
   mItem = aItem;
   
@@ -636,7 +605,7 @@ NS_IMETHODIMP
 sbLocalDatabaseSmartMediaList::GetMatchType(PRUint32* aMatchType)
 {
   NS_ENSURE_ARG_POINTER(aMatchType);
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
 
   *aMatchType = mMatchType;
 
@@ -649,7 +618,7 @@ sbLocalDatabaseSmartMediaList::SetMatchType(PRUint32 aMatchType)
     sbILocalDatabaseSmartMediaList::MATCH_TYPE_ANY,
     sbILocalDatabaseSmartMediaList::MATCH_TYPE_NONE);
 
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   mMatchType = aMatchType;
 
   nsresult rv = WriteConfiguration();
@@ -663,7 +632,7 @@ sbLocalDatabaseSmartMediaList::GetConditionCount(PRUint32* aConditionCount)
 {
   NS_ENSURE_ARG_POINTER(aConditionCount);
 
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   *aConditionCount = mConditions.Length();
 
   return NS_OK;
@@ -684,7 +653,7 @@ sbLocalDatabaseSmartMediaList::SetLimitType(PRUint32 aLimitType)
     sbILocalDatabaseSmartMediaList::LIMIT_TYPE_NONE,
     sbILocalDatabaseSmartMediaList::LIMIT_TYPE_BYTES);
 
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   mLimitType = aLimitType;
 
   nsresult rv = WriteConfiguration();
@@ -704,7 +673,7 @@ sbLocalDatabaseSmartMediaList::GetLimit(PRUint64* aLimit)
 NS_IMETHODIMP
 sbLocalDatabaseSmartMediaList::SetLimit(PRUint64 aLimit)
 {
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   mLimit = aLimit;
   
   nsresult rv = WriteConfiguration();
@@ -723,7 +692,7 @@ sbLocalDatabaseSmartMediaList::GetSelectPropertyID(nsAString& aSelectPropertyID)
 NS_IMETHODIMP
 sbLocalDatabaseSmartMediaList::SetSelectPropertyID(const nsAString& aSelectPropertyID)
 {
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   mSelectPropertyID = aSelectPropertyID;
 
   nsresult rv = WriteConfiguration();
@@ -737,7 +706,7 @@ sbLocalDatabaseSmartMediaList::GetSelectDirection(PRBool* aSelectDirection)
 {
   NS_ENSURE_ARG_POINTER(aSelectDirection);
 
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   *aSelectDirection = mSelectDirection;
 
   return NS_OK;
@@ -745,7 +714,7 @@ sbLocalDatabaseSmartMediaList::GetSelectDirection(PRBool* aSelectDirection)
 NS_IMETHODIMP
 sbLocalDatabaseSmartMediaList::SetSelectDirection(PRBool aSelectDirection)
 {
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   mSelectDirection = aSelectDirection;
 
   nsresult rv = WriteConfiguration();
@@ -759,7 +728,7 @@ sbLocalDatabaseSmartMediaList::GetRandomSelection(PRBool* aRandomSelection)
 {
   NS_ENSURE_ARG_POINTER(aRandomSelection);
 
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   *aRandomSelection = mRandomSelection;
 
   return NS_OK;
@@ -767,7 +736,7 @@ sbLocalDatabaseSmartMediaList::GetRandomSelection(PRBool* aRandomSelection)
 NS_IMETHODIMP
 sbLocalDatabaseSmartMediaList::SetRandomSelection(PRBool aRandomSelection)
 {
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   mRandomSelection = aRandomSelection;
 
   nsresult rv = WriteConfiguration();
@@ -781,7 +750,7 @@ sbLocalDatabaseSmartMediaList::GetAutoUpdate(PRBool* aAutoUpdate)
 {
   NS_ENSURE_ARG_POINTER(aAutoUpdate);
 
-  nsAutoMonitor monitor(mAutoUpdateMonitor);
+  mozilla::MonitorAutoLock monitor(mAutoUpdateMonitor);
   *aAutoUpdate = mAutoUpdate;
 
   return NS_OK;
@@ -789,7 +758,7 @@ sbLocalDatabaseSmartMediaList::GetAutoUpdate(PRBool* aAutoUpdate)
 NS_IMETHODIMP
 sbLocalDatabaseSmartMediaList::SetAutoUpdate(PRBool aAutoUpdate)
 {
-  nsAutoMonitor monitor(mAutoUpdateMonitor);
+  mozilla::MonitorAutoLock monitor(mAutoUpdateMonitor);
   mAutoUpdate = aAutoUpdate;
 
   nsresult rv = WriteConfiguration();
@@ -803,7 +772,7 @@ sbLocalDatabaseSmartMediaList::GetNotExistsMode(PRUint32* aNotExistsMode)
 {
   NS_ENSURE_ARG_POINTER(aNotExistsMode);
 
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   *aNotExistsMode = mNotExistsMode;
 
   return NS_OK;
@@ -811,7 +780,7 @@ sbLocalDatabaseSmartMediaList::GetNotExistsMode(PRUint32* aNotExistsMode)
 NS_IMETHODIMP
 sbLocalDatabaseSmartMediaList::SetNotExistsMode(PRUint32 aNotExistsMode)
 {
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   mNotExistsMode = aNotExistsMode;
 
   nsresult rv = WriteConfiguration();
@@ -879,7 +848,7 @@ sbLocalDatabaseSmartMediaList::AppendCondition(const nsAString& aPropertyID,
 NS_IMETHODIMP
 sbLocalDatabaseSmartMediaList::RemoveConditionAt(PRUint32 aConditionIndex)
 {
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   PRUint32 count = mConditions.Length();
 
   NS_ENSURE_ARG(aConditionIndex < count);
@@ -897,7 +866,7 @@ sbLocalDatabaseSmartMediaList::GetConditionAt(PRUint32 aConditionIndex,
 {
   NS_ENSURE_ARG_POINTER(_retval);
 
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
   PRUint32 count = mConditions.Length();
 
   NS_ENSURE_ARG(aConditionIndex < count);
@@ -911,7 +880,7 @@ sbLocalDatabaseSmartMediaList::GetConditionAt(PRUint32 aConditionIndex,
 NS_IMETHODIMP
 sbLocalDatabaseSmartMediaList::ClearConditions()
 {
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
 
   mConditions.Clear();
 
@@ -928,8 +897,8 @@ sbLocalDatabaseSmartMediaList::Rebuild()
 
   nsresult rv;
   {
-    nsAutoMonitor monitor(mConditionsMonitor);
-    nsAutoMonitor monitor2(mSourceMonitor);
+    mozilla::MonitorAutoLock monitor(mConditionsMonitor);
+    mozilla::MonitorAutoLock monitor2(mSourceMonitor);
 
     // You must either have a match or a limit
     NS_ENSURE_ARG(!(mMatchType == sbILocalDatabaseSmartMediaList::MATCH_TYPE_NONE &&
@@ -964,7 +933,7 @@ sbLocalDatabaseSmartMediaList::Rebuild()
   rv = ldsml->NotifyContentChanged();
   NS_ENSURE_SUCCESS(rv, rv);
 
-  nsAutoMonitor monitor(mListenersMonitor);
+  mozilla::MonitorAutoLock monitor(mListenersMonitor);
   for (PRInt32 i=0;i<mListeners.Count();i++)
     mListeners.ObjectAt(i)->OnRebuild(this);
 
@@ -2781,7 +2750,7 @@ sbLocalDatabaseSmartMediaList::ReadConfiguration()
 
   nsresult rv;
 
-  nsAutoMonitor monitor(mConditionsMonitor);
+  mozilla::MonitorAutoLock monitor(mConditionsMonitor);
 
   sbStringMap map;
   PRBool success = map.Init();
@@ -3266,7 +3235,7 @@ sbLocalDatabaseSmartMediaList::AddSmartMediaListListener(sbILocalDatabaseSmartMe
 {
   NS_ENSURE_ARG_POINTER(aListener);
 
-  nsAutoMonitor monitor(mListenersMonitor);
+  mozilla::MonitorAutoLock monitor(mListenersMonitor);
 
   // Do not add duplicate listener.
   if (mListeners.IndexOfObject(aListener) == -1)
@@ -3279,7 +3248,7 @@ sbLocalDatabaseSmartMediaList::RemoveSmartMediaListListener(sbILocalDatabaseSmar
 {
   NS_ENSURE_ARG_POINTER(aListener);
 
-  nsAutoMonitor monitor(mListenersMonitor);
+  mozilla::MonitorAutoLock monitor(mListenersMonitor);
   mListeners.RemoveObject(aListener);
   return NS_OK;
 }
@@ -3287,7 +3256,7 @@ sbLocalDatabaseSmartMediaList::RemoveSmartMediaListListener(sbILocalDatabaseSmar
 NS_IMETHODIMP
 sbLocalDatabaseSmartMediaList::SetSourceLibraryGuid(const nsAString& aGUID) {
 
-  nsAutoMonitor monitor(mSourceMonitor);
+  mozilla::MonitorAutoLock monitor(mSourceMonitor);
 
   mSourceLibraryGuid = aGUID;
   
@@ -3300,7 +3269,7 @@ sbLocalDatabaseSmartMediaList::SetSourceLibraryGuid(const nsAString& aGUID) {
 NS_IMETHODIMP
 sbLocalDatabaseSmartMediaList::GetSourceLibraryGuid(nsAString &retVal) {
 
-  nsAutoMonitor monitor(mSourceMonitor);
+  mozilla::MonitorAutoLock monitor(mSourceMonitor);
 
   nsString libraryguid = mSourceLibraryGuid;
 
