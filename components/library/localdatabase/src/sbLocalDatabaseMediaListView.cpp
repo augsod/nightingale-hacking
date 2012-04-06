@@ -217,10 +217,10 @@ sbLocalDatabaseMediaListView::sbLocalDatabaseMediaListView(sbLocalDatabaseLibrar
 
   // Build list of properties to ignore when considering whether to invalidate
   // the view. This is used by ShouldCauseInvalidation
-  mIgnoreSystemProperties.AppendString(NS_LITERAL_STRING(SB_PROPERTY_PLAYCOUNT));
-  mIgnoreSystemProperties.AppendString(NS_LITERAL_STRING(SB_PROPERTY_LASTPLAYTIME));
-  mIgnoreSystemProperties.AppendString(NS_LITERAL_STRING(SB_PROPERTY_SKIPCOUNT));
-  mIgnoreSystemProperties.AppendString(NS_LITERAL_STRING(SB_PROPERTY_LASTSKIPTIME));
+  mIgnoreSystemProperties.AppendElement(NS_LITERAL_STRING(SB_PROPERTY_PLAYCOUNT));
+  mIgnoreSystemProperties.AppendElement(NS_LITERAL_STRING(SB_PROPERTY_LASTPLAYTIME));
+  mIgnoreSystemProperties.AppendElement(NS_LITERAL_STRING(SB_PROPERTY_SKIPCOUNT));
+  mIgnoreSystemProperties.AppendElement(NS_LITERAL_STRING(SB_PROPERTY_LASTSKIPTIME));
 
   MOZ_COUNT_CTOR(sbLocalDatabaseMediaListView);
 #ifdef PR_LOGGING
@@ -1000,7 +1000,7 @@ sbLocalDatabaseMediaListView::ClonePropertyArray(sbIPropertyArray* aSource,
 nsresult
 sbLocalDatabaseMediaListView::HasCommonProperty(sbIPropertyArray* aBag1,
                                                 sbIPropertyArray* aBag2,
-                                                nsStringArray * aPropertiesToIgnore,
+                                                nsTArray<nsString>* aPropertiesToIgnore,
                                                 PRBool* aHasCommonProperty)
 {
   NS_ASSERTION(aBag1, "aBag1 is null");
@@ -1022,7 +1022,7 @@ sbLocalDatabaseMediaListView::HasCommonProperty(sbIPropertyArray* aBag1,
 
     // Only compare if we're not ignoring this property
     if (!aPropertiesToIgnore ||
-        aPropertiesToIgnore->IndexOf(propertyID) == -1) {
+        static_cast<int>(aPropertiesToIgnore->IndexOf(propertyID)) == -1) {
       nsString junk;
       rv = aBag2->GetPropertyValue(propertyID, junk);
       if (NS_SUCCEEDED(rv)) {
