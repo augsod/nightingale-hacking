@@ -100,6 +100,10 @@ tier_appbase_dirs = \
    app \
    $(NULL)
 
+tier_deps_dirs = \
+   dependencies \
+   $(NULL)
+
 tier_ui_dirs = \
    bindings \
    feathers \
