@@ -48,6 +48,7 @@
 #include <nsIStringBundle.h>
 #include <nsIPrefBranch.h>
 #include <nsIPrefService.h>
+#include <mozilla/Util.h>
 
 #include "sbDatabaseResultStringEnumerator.h"
 #include "sbLocalDatabaseGUIDArray.h"
@@ -1880,7 +1881,6 @@ nsresult sbLocalDatabaseSortInvalidateJob::Shutdown()
     "sbLocalDatabaseSortInvalidateJob::Shutdown called off the main thread!");
   TRACE("sbLocalDatabaseSortInvalidateJob[0x%.8x] - Shutdown requested",
         this);
-  nsresult rv;
 
   mShouldShutdown = PR_TRUE;
 
@@ -1888,7 +1888,7 @@ nsresult sbLocalDatabaseSortInvalidateJob::Shutdown()
   mListeners.Clear();
 
   if (mNotificationTimer) {
-    rv = mNotificationTimer->Cancel();
+    mozilla::DebugOnly<nsresult> rv = mNotificationTimer->Cancel();
     NS_ASSERTION(NS_SUCCEEDED(rv), "Failed to cancel a notification timer");
     mNotificationTimer = nsnull;
   }
@@ -2197,7 +2197,6 @@ sbLocalDatabaseSortInvalidateJob::Observe(nsISupports *aSubject,
                                           const PRUnichar *aData)
 {
   TRACE("sbLocalDatabaseSortInvalidateJob[0x%.8x] - Notification Timer Callback", this);
-  nsresult rv;
 
   // Then announce status to the world
   for (PRInt32 i = mListeners.Count() - 1; i >= 0; --i) {
@@ -2209,13 +2208,13 @@ sbLocalDatabaseSortInvalidateJob::Observe(nsISupports *aSubject,
     Shutdown();
 
     // Write everything to disk so that the new sort data takes effect
-    rv = mLibrary->Flush();
+    mozilla::DebugOnly<nsresult> rv = mLibrary->Flush();
     NS_ASSERTION(NS_SUCCEEDED(rv),
       "sbLocalDatabaseSortInvalidateJob failed to flush library!");
 
     // Vacuum, analyze, etc.
-    rv = mLibrary->Optimize(PR_FALSE);
-    NS_ASSERTION(NS_SUCCEEDED(rv),
+    mozilla::DebugOnly<nsresult> rv2 = mLibrary->Optimize(PR_FALSE);
+    NS_ASSERTION(NS_SUCCEEDED(rv2),
       "sbLocalDatabaseSortInvalidateJob failed to optimize library!");
 
 
@@ -2228,4 +2227,3 @@ sbLocalDatabaseSortInvalidateJob::Observe(nsISupports *aSubject,
 
   return NS_OK;
 }
-
