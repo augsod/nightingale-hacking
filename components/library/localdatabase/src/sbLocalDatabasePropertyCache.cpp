@@ -1804,7 +1804,7 @@ NS_IMPL_CI_INTERFACE_GETTER5(sbLocalDatabaseSortInvalidateJob,
                              sbIMediaListEnumerationListener,
                              nsIObserver)
 
-NS_DECL_CLASSINFO(sbLocalDatabaseSortInvalidateJob)
+//NS_DECL_CLASSINFO(sbLocalDatabaseSortInvalidateJob)
 NS_IMPL_THREADSAFE_CI(sbLocalDatabaseSortInvalidateJob)
 
 sbLocalDatabaseSortInvalidateJob::sbLocalDatabaseSortInvalidateJob() :
