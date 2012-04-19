@@ -799,8 +799,8 @@ export:: $(OUR_WIN32_RC_OBJS)
 #
 
 DEFAULT_DYNAMIC_LIBS_IMPORTS = xpcomglue_s \
-                               nspr4 \
                                xpcom \
+                               nspr4 \
                                mozalloc \
                                $(NULL)
 
@@ -874,11 +874,11 @@ OUR_LD_STATIC_IMPORT_LIST = $(foreach import, \
                              $(addprefix $(SONGBIRD_OBJDIR)/, \
                              $(import)$(DEBUG:%=_d)$(LIB_SUFFIX))))
 
-OUR_LD_IMPORTS = $(OUR_LD_STATIC_IMPORT_LIST) \
-                  $(addsuffix $(LDFLAGS_IMPORT_SUFFIX),\
+OUR_LD_IMPORTS =  $(addsuffix $(LDFLAGS_IMPORT_SUFFIX),\
                   $(addprefix $(LDFLAGS_IMPORT_PREFIX),\
                   $(OUR_LD_IMPORT_LIST))) \
                   $(DYNAMIC_LIB_RAW_IMPORTS) \
+		  $(OUR_LD_STATIC_IMPORT_LIST) \
                   $(NULL)
 
 OUR_LINKER_OUTPUT = $(LDFLAGS_OUT_PREFIX)$@$(LDFLAGS_OUT_SUFFIX)
