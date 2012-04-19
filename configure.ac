@@ -961,8 +961,8 @@ case "$SB_PLATFORM" in
       GCC_COMPILER_FLAGS="$GCC_COMPILER_FLAGS -gstabs+ -Os"
     fi
 
-    # We always want to include "mozilla-config.h"
-    GCC_COMPILER_FLAGS="$GCC_COMPILER_FLAGS -include \"mozilla-config.h\""
+    # We always want to include "xpcom-config.h"
+    GCC_COMPILER_FLAGS="$GCC_COMPILER_FLAGS -include \"xpcom-config.h\""
 
     # HACK: we should detect char16_t support here. For now, assume new enough GCC.
     GCC_COMPILER_FLAGS="$GCC_COMPILER_FLAGS --std=gnu++0x"
