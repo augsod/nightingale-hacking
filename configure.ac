@@ -952,7 +952,7 @@ case "$SB_PLATFORM" in
 
     # Breakpad needs stabs debugging data, so always explicitly request it with
     # -gstabs+
-    GCC_COMPILER_FLAGS="-c -fPIC -fexceptions -fnon-call-exceptions -funwind-tables -fasynchronous-unwind-tables -fno-rtti -fno-strict-aliasing -Wall -Wno-conversion -Wno-attributes -Wpointer-arith -Wcast-align -Wno-long-long -pipe -pthread"
+    GCC_COMPILER_FLAGS="-c -fPIC -fexceptions -fnon-call-exceptions -funwind-tables -fasynchronous-unwind-tables -fno-rtti -fno-strict-aliasing -Wall -Wno-conversion -Wno-attributes -Wpointer-arith -Wcast-align -Wno-long-long -pipe -pthread -DMOZILLA_CLIENT"
 
     if test "$enable_debug" = "yes"; then
       GCC_COMPILER_FLAGS="$GCC_COMPILER_FLAGS -g -ggdb3 -fno-inline"
@@ -961,7 +961,8 @@ case "$SB_PLATFORM" in
       GCC_COMPILER_FLAGS="$GCC_COMPILER_FLAGS -gstabs+ -Os"
     fi
 
-    # We always want to include "xpcom-config.h"
+    # We always want to include "xpcom-config.h" and "mozilla-config.h"
+    GCC_COMPILER_FLAGS="$GCC_COMPILER_FLAGS -include \"mozilla-config.h\""
     GCC_COMPILER_FLAGS="$GCC_COMPILER_FLAGS -include \"xpcom-config.h\""
 
     # HACK: we should detect char16_t support here. For now, assume new enough GCC.

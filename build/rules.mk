@@ -804,7 +804,8 @@ DEFAULT_DYNAMIC_LIBS_IMPORTS = xpcomglue_s \
                                mozalloc \
                                $(NULL)
 
-DEFAULT_DYNAMIC_LIB_IMPORT_PATHS = $(MOZSDK_LIB_DIR)
+DEFAULT_DYNAMIC_LIB_IMPORT_PATHS = $(MOZSDK_LIB_DIR) \
+                                   $(MOZSDK_BIN_DIR)
 
 ifdef DYNAMIC_LIB #{
 
@@ -887,7 +888,7 @@ $(OUR_DYNAMIC_LIB): $(OUR_DYNAMIC_LIB_OBJS) $(OUR_DYNAMIC_LIB_EXTRA_DEPS)
 ifdef FORCE_RANLIB
 	$(RANLIB) $(OUR_LINKER_OUTPUT) $(FORCE_RANLIB)
 endif
-	$(LD) $(OUR_LINKER_OUTPUT) $(OUR_LD_FLAGS) $(OUR_LINKER_PATHS) $(OUR_DYNAMIC_LIB_OBJS) $(OUR_LD_IMPORTS)
+	$(LD) $(OUR_LINKER_OUTPUT) $(OUR_LD_FLAGS) $(OUR_DYNAMIC_LIB_OBJS) $(OUR_LINKER_PATHS) $(OUR_LD_IMPORTS)
 endif # }DYNAMIC_LIB
 
 #------------------------------------------------------------------------------
