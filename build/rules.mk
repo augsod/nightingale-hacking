@@ -239,7 +239,7 @@ ifdef SIMPLE_PROGRAM
    else
       OUR_SIMPLE_PROGRAM = $(strip $(SIMPLE_PROGRAM))$(DEBUG:%=_d)$(BIN_SUFFIX)
    endif
-sendif
+endif
 
 # SUBMAKEFILES: List of Makefiles for next level down.
 #   This is used to update or create the Makefiles before invoking them.
