@@ -239,7 +239,7 @@ ifdef SIMPLE_PROGRAM
    else
       OUR_SIMPLE_PROGRAM = $(strip $(SIMPLE_PROGRAM))$(DEBUG:%=_d)$(BIN_SUFFIX)
    endif
-endif
+sendif
 
 # SUBMAKEFILES: List of Makefiles for next level down.
 #   This is used to update or create the Makefiles before invoking them.
@@ -319,16 +319,17 @@ libs_tier_%:
     $(foreach dir,$(tier_$*_dirs),$(MAKE) -C $(dir) libs; ) true
 
 deps_defines= \
-   -DMOZ_APP_NAME=firefox\ \
-   -DMOZ_UPDATER=1\
-   -DMOZ_PHOENIX=1\
-   -DMOZ_ENABLE_LIBXUL=1\
-   -DMOZ_STATIC_BUILD_UNSUPPORTED=1\
-   -DMOZ_PLACES=1\ -DMOZ_MORKREADER=1\
-   -DMOZ_SAFE_BROWSING=1\
-   -DMOZ_APP_VERSION=$(FIREFOX_VERSION)\
-   -DMOZ_NO_XPCOM_OBSOLETE=1\
-   -DMOZ_BRANDING_DIRECTORY=browser/branding/unofficial\
+   -DMOZ_APP_NAME=firefox \
+   -DMOZ_UPDATER=1 \
+   -DMOZ_PHOENIX=1 \
+   -DMOZ_ENABLE_LIBXUL=1 \
+   -DMOZ_STATIC_BUILD_UNSUPPORTED=1 \
+   -DMOZ_PLACES=1 \
+   -DMOZ_MORKREADER=1 \
+   -DMOZ_SAFE_BROWSING=1 \
+   -DMOZ_APP_VERSION=$(FIREFOX_VERSION) \
+   -DMOZ_NO_XPCOM_OBSOLETE=1 \
+   -DMOZ_BRANDING_DIRECTORY=browser/branding/unofficial \
    -DMOZ_OFFICIAL_BRANDING_DIRECTORY=other-licenses/branding/firefox
 
 # This dependency listing is technically incorrect, in that it states that
